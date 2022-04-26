@@ -257,7 +257,7 @@ body {
   padding: 0;
   color: var(--default-text-color);
   background: var(--background-color);
-  font-family: Optima-Regular, Optima, -apple-system, system-ui, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif, BlinkMacSystemFont, Helvetica Neue, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Arial;
+  font-family: -apple-system, Microsoft YaHei, Arial, Optima-Regular, Optima, system-ui, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif, BlinkMacSystemFont, Helvetica Neue, PingFang SC, Hiragino Sans GB;
   font-weight: 400;
   font-size: 15.2px;
   line-height: 22px;
@@ -1236,7 +1236,7 @@ pre .javascript .function {
   position: relative;
   box-sizing: border-box;
   width: 80%;
-  max-width: 920px;
+  max-width: 930px;
   height: 100%;
 }
 @media (max-width: 780px) {
@@ -1589,23 +1589,6 @@ pre .javascript .function {
 .progress-bar-container .pjax-progress-icon.show {
   visibility: visible;
 }
-.progress-bar-container .scroll-progress-bar {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 0;
-  height: 2px;
-  visibility: hidden;
-  z-index: 1007;
-  background: var(--primary-color);
-  transition-property: color, background, box-shadow, border-color, width;
-  transition-delay: 0s, 0s, 0s, 0s, 0s;
-  transition-duration: 0.2s, 0.2s, 0.2s, 0.2s, 0.1s;
-  transition-timing-function: ease, ease, ease, ease, linear;
-}
-.progress-bar-container .scroll-progress-bar.hide {
-  display: none !important;
-}
 .header-wrapper {
   width: 100%;
   height: 100%;
@@ -1624,7 +1607,7 @@ pre .javascript .function {
   position: relative;
   height: 100%;
   width: 80%;
-  max-width: 920px;
+  max-width: 930px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -1632,7 +1615,7 @@ pre .javascript .function {
   z-index: 1005;
 }
 .header-wrapper .header-content.has-first-screen {
-  max-width: 1104px;
+  max-width: 1116px;
 }
 @media (max-width: 780px) {
   .header-wrapper .header-content {

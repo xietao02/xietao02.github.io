@@ -257,7 +257,7 @@ body {
   padding: 0;
   color: var(--default-text-color);
   background: var(--background-color);
-  font-family: Optima-Regular, Optima, -apple-system, system-ui, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif, BlinkMacSystemFont, Helvetica Neue, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Arial;
+  font-family: -apple-system, Microsoft YaHei, Arial, Optima-Regular, Optima, system-ui, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif, BlinkMacSystemFont, Helvetica Neue, PingFang SC, Hiragino Sans GB;
   font-weight: 400;
   font-size: 15.2px;
   line-height: 22px;
