@@ -216,12 +216,12 @@
     
     
         <span class="article-wordcount article-meta-item">
-            <i class="fas fa-file-word"></i>&nbsp;<span>2.7k Words</span>
+            <i class="fas fa-file-word"></i>&nbsp;<span>2.8k Words</span>
         </span>
     
     
         <span class="article-min2read article-meta-item">
-            <i class="fas fa-clock"></i>&nbsp;<span>12 Mins</span>
+            <i class="fas fa-clock"></i>&nbsp;<span>13 Mins</span>
         </span>
     
     
@@ -264,10 +264,11 @@
 </li>
 <li><p><strong>n_jobs: integer (default = None)</strong><br>训练和预测时工作的CPU核心数。默认为 None，解释为n_jobs = 1。如果设置为-1，则使用所有核心进行计算。</p>
 </li>
-<li><p><strong>bootstrap: bool (default = True)</strong><br>是否使用 bootstrap 方法构建分类决策树。bootstrap 是统计学上一种非常实用的方法，通过有放回地抽取数据集来创造数据的随机性。</p>
+<li><p><strong>bootstrap: bool (default = True)</strong><br>是否使用 bootstrap 方法构建分类决策树。bootstrap 是统计学上一种非常实用的方法，通过在n个样本的集合中有放回的抽取n个样本形成一个数据集。<br>假设样本集中有n个样本，每次抽中其中任何一个样本的概率都为1/n，即等概率，一个样本在每次抽样中没被抽中的概率为1-1/n。由于是有放回的抽样，每两次抽样之间是独立的，因此对于连续n次抽样，一个样本没被抽中的概率为：**(1−1∕n)ⁿ**</p>
+<p>当n趋于无穷大时，可得：<strong>lim 𝑛→+∞ (1−1∕n)ⁿ = 1∕℮</strong>，即数据集中有大约1/3的数据是没有被选取的，称为袋外数据 (out-of-bag data)。</p>
 </li>
 <li><p><strong>oob_score: bool (default = True)</strong></p>
-<p>是否使用做袋外数据进行测试。由于构建分类决策树时使用了 bootstrap 方法，所以在生成一棵树的过程中并不会使用所有的样本，这些未使用的样本就叫袋外数据 (out-of-bag data)。因此，可以不划分训练集和测试集，而通过袋外数据评估树的准确度，所有树的准确度取平均值就是该随机森林的性能。但是这不是绝对的， 如果没有数据在袋外，即数据都被某些树使用了，也就不能使用oob数据进行测试了。</p>
+<p>是否使用做袋外数据进行测试。由于构建分类决策树时使用了 bootstrap 方法，所以在生成一棵树的过程中可能会有袋外数据。因此，可以不划分训练集和测试集，而通过袋外数据评估树的准确度，所有树的准确度取平均值就是该随机森林的性能。但是这不是绝对的， 如果没有数据在袋外，即数据都被某些树使用了，也就不能使用oob数据进行测试了。</p>
 </li>
 </ul>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">RF = RandomForestClassifier(n_jobs=<span class="number">4</span>)</span><br><span class="line"><span class="comment"># 即 RF = RandomForestClassifier(n_estimators=100, n_jobs=4, bootstrap=True, oob_score=True)</span></span><br><span class="line">iris = load_iris()</span><br><span class="line">x = iris.data[:, :<span class="number">2</span>]	<span class="comment"># 只有两个特征</span></span><br><span class="line">y = iris.target</span><br><span class="line">RF.fit(x, y)</span><br></pre></td></tr></table></figure>
