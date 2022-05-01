@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="XieTao">
+    
+    <title>
+        
+            鸢尾花分类的随机森林实现及结果可视化 |
+        
+        谢焘的个人站
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/logo.svg">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/css/font-awesome.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"example.com","root":"/","language":"en","path":"search.json"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":false,"init_open":true},"style":{"primary_color":"#CC0000","avatar":"/images/cat.JPG","favicon":"/images/logo.svg","article_img_align":"center","left_side_width":"260px","content_max_width":"930px","hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"但行好事，莫问前程。"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":true}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":true,"style":"mac"},"pjax":{"enable":true},"lazyload":{"enable":false},"version":"3.4.5"};
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+  </script>
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <span class="pjax-progress-icon">
+            <i class="fas fa-circle-notch fa-spin"></i>
+        </span>
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                谢焘的个人站
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                HOME
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                ARCHIVES
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                CATEGORIES
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/tags"
+                            >
+                                TAGS
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/about"
+                            >
+                                ABOUT
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">HOME</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">ARCHIVES</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">CATEGORIES</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/tags">TAGS</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/about">ABOUT</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">鸢尾花分类的随机森林实现及结果可视化</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/cat.JPG">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">XieTao</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;
+        <span class="pc">2022-05-01 16:00:35</span>
+        <span class="mobile">2022-05-01 16:00</span>
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/notes/">notes</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/random-forest/">random forest</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fas fa-file-word"></i>&nbsp;<span>1.7k Words</span>
+        </span>
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fas fa-clock"></i>&nbsp;<span>7 Mins</span>
+        </span>
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <p>基于scikit-learn的鸢尾花分类及结果可视化教程（随机森林实现）。</p>
+<span id="more"></span>
+
+<h1 id="随机森林概述"><a href="#随机森林概述" class="headerlink" title="随机森林概述"></a>随机森林概述</h1><p>随机森林主要应用于回归和分类两种场景，<strong>又侧重于分类</strong>。</p>
+<p>随机森林是指利用多棵树对样本数据进行训练、分类并预测的一种方法。它在对数据进行分类的同时，还可以给出各个变量的重要性评分，评估各个变量在分类中所起的作用。</p>
+<h2 id="随机森林的构建："><a href="#随机森林的构建：" class="headerlink" title="随机森林的构建："></a>随机森林的构建：</h2><p>首先利用bootstrap方法有放回地从原始训练集中随机抽取n个样本，并构建n个决策树；<br>然后假设在训练样本数据中有m个特征，那么每次分裂时选择最好的特征进行分裂，每棵树都一直这样分裂下去，直到该节点<br>的所有训练样例都属于同一类；接着让每棵决策树在不做任何修剪的前提下最大限度地生长；最后将生成的多棵<br>分类树组成随机森林，用随机森林分类器对新的数据进行分类与回归。</p>
+<h2 id="预测结果："><a href="#预测结果：" class="headerlink" title="预测结果："></a>预测结果：</h2><ul>
+<li>对于分类问题，按多棵树分类器投票决定最终分类结果</li>
+<li>对于回归问题，则由多棵树预测值的均值决定最终预测结果</li>
+</ul>
+<h1 id="分类包含两个特征的数据集"><a href="#分类包含两个特征的数据集" class="headerlink" title="分类包含两个特征的数据集"></a>分类包含两个特征的数据集</h1><p>本章节末有完整源代码，<a href="#destination">点此处跳转</a>。以下为代码各部分详解。</p>
+<h2 id="导入模块、函数"><a href="#导入模块、函数" class="headerlink" title="导入模块、函数"></a>导入模块、函数</h2><p>需要使用到的模块</p>
+<ul>
+<li>numpy：数据处理</li>
+<li>matplotlib：结果可视化</li>
+<li>sklearn：具有各种分类、回归和聚类算法</li>
+</ul>
+<p>这里我只导入需要的部分函数</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">from</span> matplotlib.colors <span class="keyword">import</span> ListedColormap</span><br><span class="line"><span class="keyword">from</span> sklearn.ensemble <span class="keyword">import</span> RandomForestClassifier</span><br><span class="line"><span class="keyword">from</span> sklearn.ensemble <span class="keyword">import</span> ExtraTreesClassifier</span><br><span class="line"><span class="keyword">from</span> sklearn.datasets <span class="keyword">import</span> load_iris</span><br></pre></td></tr></table></figure>
+
+<h2 id="构建随机森林"><a href="#构建随机森林" class="headerlink" title="构建随机森林"></a>构建随机森林</h2><p>使用<strong>RandomForestClassifier</strong>函数构建随机森林分类器。</p>
+<p>以下为该函数的部分参数解析：</p>
+<ul>
+<li><p><strong>n_estimators: integer (default = 100)</strong><br>森林中基评估器的数量，也就是树的数量。一般来说，n_estimators 越小越容易过拟合，越大模型效果越好，但达到一定程度时，再增大 n_estimators 所提升的性能非常小，并且需要注意，n_estimators 越大模型的计算量越大。<br>sklearn 在0.22版本后，n_estimators 的默认值由原来的10增加到了100。</p>
+</li>
+<li><p><strong>n_jobs: integer (default = None)</strong><br>训练和预测时工作的CPU核心数。默认为 None，解释为n_jobs = 1。如果设置为-1，则使用所有核心进行计算。</p>
+</li>
+<li><p><strong>bootstrap: bool (default = True)</strong><br>是否使用 bootstrap 方法构建分类决策树。bootstrap 是统计学上一种非常实用的方法，通过有放回地抽取数据集来创造数据的随机性。</p>
+</li>
+<li><p><strong>oob_score: bool (default = True)</strong></p>
+<p>是否使用做袋外数据进行测试。由于构建分类决策树时使用了 bootstrap 方法，所以在生成一棵树的过程中并不会使用所有的样本，这些未使用的样本就叫袋外数据 (out-of-bag data)。因此，可以不划分训练集和测试集，而通过袋外数据评估树的准确度，所有树的准确度取平均值就是该随机森林的性能。但是这不是绝对的， 如果没有数据在袋外，即数据都被某些树使用了，也就不能使用oob数据进行测试了。</p>
+</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">RF = RandomForestClassifier(n_jobs=<span class="number">4</span>)</span><br><span class="line"><span class="comment"># 即 RF = RandomForestClassifier(n_estimators=100, n_jobs=4, bootstrap=True, oob_score=True)</span></span><br><span class="line">iris = load_iris()</span><br><span class="line">x = iris.data[:, :<span class="number">2</span>]	<span class="comment"># 只有两个特征</span></span><br><span class="line">y = iris.target</span><br><span class="line">RF.fit(x, y)</span><br></pre></td></tr></table></figure>
+
+<h2 id="输出可视化结果"><a href="#输出可视化结果" class="headerlink" title="输出可视化结果"></a>输出可视化结果</h2><p>使用 matplotlib 模块画出预测结果的图像，有利于直观地查看分类结果。</p>
+<p>本文没有划分测试集进行预测，且本小节侧重于可视化的方法教程，因此此处直接将所有数据按其标签进行可视化。</p>
+<p>但是，我们仍可以使用袋外数据评估分类器性能。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">cmap_bold = ListedColormap([<span class="string">&#x27;#FF0000&#x27;</span>, <span class="string">&#x27;#00FF00&#x27;</span>, <span class="string">&#x27;#0000FF&#x27;</span>])</span><br><span class="line">plt.figure()</span><br><span class="line">plt.scatter(x[:, <span class="number">0</span>], x[:, <span class="number">1</span>], c=y, cmap=cmap_bold, edgecolors=<span class="string">&#x27;k&#x27;</span>, s=<span class="number">20</span>)</span><br><span class="line">plt.title(<span class="string">&#x27;RandomForestClassifier&#x27;</span>)</span><br><span class="line">plt.show()</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;RandomForestClassifier score:&#x27;</span>, RF.score(x, y))</span><br></pre></td></tr></table></figure>
+
+<p>输出如下</p>
+<img src="image1.png" alt="image1" style="zoom:50%;" />
+
+<h2 id="画出特征组合的决策边界"><a href="#画出特征组合的决策边界" class="headerlink" title="画出特征组合的决策边界"></a>画出特征组合的决策边界</h2><p>为了进一步了解特征与类别的关系，还可以画出特征组合的决策边界。</p>
+<p>首先在一个区域里生成大量的坐标点。这需要使用 np.meshgrid() 函数。给定两个 array，比如 x=[1,2,3] 和 y=[4,5]，np.meshgrid(x,y) 会输出两个矩阵。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># example</span></span><br><span class="line">x = [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]</span><br><span class="line">y = [<span class="number">4</span>, <span class="number">5</span>]</span><br><span class="line">z = np.meshgrid(x, y)</span><br><span class="line"><span class="built_in">print</span>(z)</span><br></pre></td></tr></table></figure>
+
+<p>输出如下</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">[array([[<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>],</span><br><span class="line">       [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>]]), </span><br><span class="line"> array([[<span class="number">4</span>, <span class="number">4</span>, <span class="number">4</span>],</span><br><span class="line">       [<span class="number">5</span>, <span class="number">5</span>, <span class="number">5</span>]])]</span><br></pre></td></tr></table></figure>
+
+<p>不妨将区域边界规定为特征值的max + 1 以及 min - 1。同时使每个相邻坐标点之间的距离为 0.02。</p>
+<p>将所有坐标点的 x 轴数值记录在矩阵 xx 中，所有坐标点的 y 轴数值记录在矩阵 yy 中。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">x_min, x_max = x[:, <span class="number">0</span>].<span class="built_in">min</span>() - <span class="number">1</span>, x[:, <span class="number">0</span>].<span class="built_in">max</span>() + <span class="number">1</span></span><br><span class="line">y_min, y_max = x[:, <span class="number">1</span>].<span class="built_in">min</span>() - <span class="number">1</span>, x[:, <span class="number">1</span>].<span class="built_in">max</span>() + <span class="number">1</span></span><br><span class="line">h = <span class="number">.02</span></span><br><span class="line">xx, yy = np.meshgrid(</span><br><span class="line">        np.arange(x_min, x_max, h),</span><br><span class="line">        np.arange(y_min, y_max, h)</span><br><span class="line">    )</span><br></pre></td></tr></table></figure>
+
+<p>然后，为了预测这些坐标点对应的分类，需要将所有坐标点储存为一个一维向量，同时向量的每一个元素又包含了该坐标点的x和y轴数值。</p>
+<p>因此，使用 np.ndarray.ravel() 函数将 xx 和 yy 矩阵各拼接为一个一维向量，再使用 np.c_() 把对应位置的数值粘合在一起。并把预测结果储存在一个一维向量 z 中。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">z = RF.predict(np.c_[xx.ravel(), yy.ravel()])</span><br></pre></td></tr></table></figure>
+
+<p>为了能将预测结果对应区域的每一个坐标点，还需要将一维向量 z 转换成 xx 和 yy 的形式。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">z = z.reshape(xx.shape)</span><br></pre></td></tr></table></figure>
+
+<p>最后，使用 ListedColormap() 函数接收颜色的RGB代码，以生成一个自定义的 colormap，pcolormesh() 会根据 z 的值(0, 1, 2) 来选择colormap里对应的颜色进行背景填充。</p>
+<p>如果需要限制画图区域，调用 plt.xlim() 和 plt.ylim() 即可。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cmap_light = ListedColormap([<span class="string">&#x27;#FFAAAA&#x27;</span>, <span class="string">&#x27;#AAFFAA&#x27;</span>, <span class="string">&#x27;#AAAAFF&#x27;</span>])</span><br><span class="line">plt.figure()</span><br><span class="line">plt.pcolormesh(xx, yy, z, cmap=cmap_light)</span><br><span class="line">plt.xlim(x[:, <span class="number">0</span>].<span class="built_in">min</span>() - <span class="number">0.5</span>, x[:, <span class="number">0</span>].<span class="built_in">max</span>() + <span class="number">0.5</span>)</span><br><span class="line">plt.ylim(x[:, <span class="number">1</span>].<span class="built_in">min</span>() - <span class="number">0.5</span>, x[:, <span class="number">1</span>].<span class="built_in">max</span>() + <span class="number">0.5</span>)</span><br></pre></td></tr></table></figure>
+
+<p>输出如下</p>
+<img src="image2.png" alt="image2" style="zoom:50%;" />
+
+<h2 id="完整源代码"><a href="#完整源代码" class="headerlink" title="完整源代码"></a><span id="destination">完整源代码</span></h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">from</span> matplotlib.colors <span class="keyword">import</span> ListedColormap</span><br><span class="line"><span class="keyword">from</span> sklearn.ensemble <span class="keyword">import</span> RandomForestClassifier</span><br><span class="line"><span class="keyword">from</span> sklearn.ensemble <span class="keyword">import</span> ExtraTreesClassifier</span><br><span class="line"><span class="keyword">from</span> sklearn.datasets <span class="keyword">import</span> load_iris</span><br><span class="line"></span><br><span class="line">RF = RandomForestClassifier(n_jobs=<span class="number">4</span>)</span><br><span class="line">iris = load_iris()</span><br><span class="line">x = iris.data[:, :<span class="number">2</span>]</span><br><span class="line">y = iris.target</span><br><span class="line">RF.fit(x, y)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">x_min, x_max = x[:, <span class="number">0</span>].<span class="built_in">min</span>() - <span class="number">1</span>, x[:, <span class="number">0</span>].<span class="built_in">max</span>() + <span class="number">1</span></span><br><span class="line">y_min, y_max = x[:, <span class="number">1</span>].<span class="built_in">min</span>() - <span class="number">1</span>, x[:, <span class="number">1</span>].<span class="built_in">max</span>() + <span class="number">1</span></span><br><span class="line">h = <span class="number">.02</span></span><br><span class="line"></span><br><span class="line">cmap_bold = ListedColormap([<span class="string">&#x27;#FF0000&#x27;</span>, <span class="string">&#x27;#00FF00&#x27;</span>, <span class="string">&#x27;#0000FF&#x27;</span>])</span><br><span class="line">cmap_light = ListedColormap([<span class="string">&#x27;#FFAAAA&#x27;</span>, <span class="string">&#x27;#AAFFAA&#x27;</span>, <span class="string">&#x27;#AAAAFF&#x27;</span>])</span><br><span class="line"></span><br><span class="line">xx, yy = np.meshgrid(</span><br><span class="line">    np.arange(x_min, x_max, h),</span><br><span class="line">    np.arange(y_min, y_max, h)</span><br><span class="line">)</span><br><span class="line">z = RF.predict(np.c_[xx.ravel(), yy.ravel()])</span><br><span class="line">z = z.reshape(xx.shape)</span><br><span class="line">plt.figure()</span><br><span class="line">plt.pcolormesh(xx, yy, z, cmap=cmap_light)</span><br><span class="line">plt.scatter(x[:, <span class="number">0</span>], x[:, <span class="number">1</span>], c=y, cmap=cmap_bold, edgecolors=<span class="string">&#x27;k&#x27;</span>, s=<span class="number">20</span>)</span><br><span class="line">plt.xlim(x[:, <span class="number">0</span>].<span class="built_in">min</span>() - <span class="number">0.5</span>, x[:, <span class="number">0</span>].<span class="built_in">max</span>() + <span class="number">0.5</span>)</span><br><span class="line">plt.ylim(x[:, <span class="number">1</span>].<span class="built_in">min</span>() - <span class="number">0.5</span>, x[:, <span class="number">1</span>].<span class="built_in">max</span>() + <span class="number">0.5</span>)</span><br><span class="line">plt.title(<span class="string">&#x27;RandomForestClassifier&#x27;</span>)</span><br><span class="line">plt.show()</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;RandomForestClassifier score:&#x27;</span>, RF.score(x, y))</span><br></pre></td></tr></table></figure>
+
+<p> 输出结果如下</p>
+<img src="image3.png" alt="image3" style="zoom:50%;" />
+
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li>Post title：鸢尾花分类的随机森林实现及结果可视化</li>
+        <li>Post author：XieTao</li>
+        <li>Create time：2022-05-01 16:00:35</li>
+        <li>
+            Post link：https://xietao.site/2022/05/01/鸢尾花分类的随机森林实现及结果可视化/
+        </li>
+        <li>
+            Copyright Notice：All articles in this blog are licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> unless stating additionally.
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <ul class="post-tags-box">
+                
+                    <li class="tag-item">
+                        <a href="/tags/random-forest/">#random forest</a>&nbsp;
+                    </li>
+                
+            </ul>
+        
+
+        
+            <div class="article-nav">
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/2021/12/10/%E5%9F%BA%E4%BA%8EQt%E7%9A%84%E5%AD%A6%E7%94%9F%E4%BF%A1%E6%81%AF%E7%AE%A1%E7%90%86%E7%B3%BB%E7%BB%9F/"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">基于QT的学生信息管理系统</span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2021</span>
+              -
+            
+            2022&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">XieTao</a>
+        </div>
+        
+            <script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                    <span id="busuanzi_container_site_uv">
+                        Visitor Count&nbsp;<span id="busuanzi_value_site_uv"></span>&ensp;
+                    </span>
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        Totalview&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;|&nbsp;Theme&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.5</a>
+        </div>
+        
+            <div class="icp-info info-item"><a target="_blank" rel="nofollow" href="https://beian.miit.gov.cn">赣ICP备2021009840号</a></div>
+        
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%9A%8F%E6%9C%BA%E6%A3%AE%E6%9E%97%E6%A6%82%E8%BF%B0"><span class="nav-number">1.</span> <span class="nav-text">随机森林概述</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9A%8F%E6%9C%BA%E6%A3%AE%E6%9E%97%E7%9A%84%E6%9E%84%E5%BB%BA%EF%BC%9A"><span class="nav-number">1.1.</span> <span class="nav-text">随机森林的构建：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%84%E6%B5%8B%E7%BB%93%E6%9E%9C%EF%BC%9A"><span class="nav-number">1.2.</span> <span class="nav-text">预测结果：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%88%86%E7%B1%BB%E5%8C%85%E5%90%AB%E4%B8%A4%E4%B8%AA%E7%89%B9%E5%BE%81%E7%9A%84%E6%95%B0%E6%8D%AE%E9%9B%86"><span class="nav-number">2.</span> <span class="nav-text">分类包含两个特征的数据集</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%BC%E5%85%A5%E6%A8%A1%E5%9D%97%E3%80%81%E5%87%BD%E6%95%B0"><span class="nav-number">2.1.</span> <span class="nav-text">导入模块、函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9E%84%E5%BB%BA%E9%9A%8F%E6%9C%BA%E6%A3%AE%E6%9E%97"><span class="nav-number">2.2.</span> <span class="nav-text">构建随机森林</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BE%93%E5%87%BA%E5%8F%AF%E8%A7%86%E5%8C%96%E7%BB%93%E6%9E%9C"><span class="nav-number">2.3.</span> <span class="nav-text">输出可视化结果</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%BB%E5%87%BA%E7%89%B9%E5%BE%81%E7%BB%84%E5%90%88%E7%9A%84%E5%86%B3%E7%AD%96%E8%BE%B9%E7%95%8C"><span class="nav-number">2.4.</span> <span class="nav-text">画出特征组合的决策边界</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%8C%E6%95%B4%E6%BA%90%E4%BB%A3%E7%A0%81"><span class="nav-number">2.5.</span> <span class="nav-text">完整源代码</span></a></li></ol></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="Search..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/dark-light-toggle.js"></script>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/local-search.js"></script>
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/code-copy.js"></script>
+
+
+
+
+<div class="post-scripts pjax">
+    
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/left-side-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/libs/anime.min.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/toc.js"></script>
+    
+</div>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/libs/pjax.min.js"></script>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        window.pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+            // scrollTo: true,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            KEEP.utils.pjaxProgressBarStart();
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            KEEP.utils.pjaxProgressBarEnd();
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
+            KEEP.refresh();
+        });
+    });
+</script>
+
+
+
+</body>
+</html>
