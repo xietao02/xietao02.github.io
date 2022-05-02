@@ -299,14 +299,14 @@
 </tbody></table>
 <h1 id="实现细节"><a href="#实现细节" class="headerlink" title="实现细节"></a>实现细节</h1><h2 id="主要模块"><a href="#主要模块" class="headerlink" title="主要模块"></a>主要模块</h2><h3 id="加法模块"><a href="#加法模块" class="headerlink" title="加法模块"></a>加法模块</h3><p>加法模块采用了组间、组内并行的超前进位方式设计</p>
 <p>首先构造出一个1-bit全加器，在构建一个4-bit CLA组件，通过整合四个1-bit全加器和一个4-bit CLA组件，得到一个4-bit超前进位加法器。在使用四个4-bit超前进位加法器，整合而成一个16-bit超前进位加法器，最后使用两个16-bit超前进位加法器即可完成32-bit超前进位加法器。<br>其中，超前进位模块在运算时为每一位计算提供CI的进位信息，相比较行波进位的方式，该方式能有效控制由于门电路堆叠造成的延迟时间。</p>
-<h4 id="具体原理："><a href="#具体原理：" class="headerlink" title="具体原理："></a><strong>具体原理：</strong></h4><p>设二进制加法器第 i 位为Ai，Bi，输出为Si，进位输入为Ci，进位输出为C(i+1)，则有：<br><img src="image1.png" alt="image1.png"></p>
-<p><strong>四位超前进位模块公式：</strong><br><img src="image2.png" alt="image2.png"></p>
-<p><strong>四位超前进位模块：</strong><br><img src="image3.png" alt="image3.png"></p>
-<p><strong>四位超前进位加法器</strong><br><img src="image4.png" alt="image4.png"></p>
-<p><strong>封装后的四位超前进位加法器：</strong><br><img src="image5.png" alt="image5.png"></p>
-<p><strong>因为</strong><br><img src="image6.png" alt="image6.png"><br><strong>通过类比法可得：</strong><br><img src="image7.png" alt="image7.png"></p>
-<p><strong>十六位超前进位加法器：</strong><br><img src="image8.png" alt="image8.png"></p>
-<p><strong>三十二位超前进位加法器：</strong><br><img src="image9.png" alt="image9.png"></p>
+<h4 id="具体原理："><a href="#具体原理：" class="headerlink" title="具体原理："></a><strong>具体原理：</strong></h4><p>设二进制加法器第 i 位为Ai，Bi，输出为Si，进位输入为Ci，进位输出为C(i+1)，则有：<br><img src="32bitALU/image1.png" alt="image1.png"></p>
+<p><strong>四位超前进位模块公式：</strong><br><img src="32bitALU/image2.png" alt="image2.png"></p>
+<p><strong>四位超前进位模块：</strong><br><img src="32bitALU/image3.png" alt="image3.png"></p>
+<p><strong>四位超前进位加法器</strong><br><img src="32bitALU/image4.png" alt="image4.png"></p>
+<p><strong>封装后的四位超前进位加法器：</strong><br><img src="32bitALU/image5.png" alt="image5.png"></p>
+<p><strong>因为</strong><br><img src="32bitALU/image6.png" alt="image6.png"><br><strong>通过类比法可得：</strong><br><img src="32bitALU/image7.png" alt="image7.png"></p>
+<p><strong>十六位超前进位加法器：</strong><br><img src="32bitALU/image8.png" alt="image8.png"></p>
+<p><strong>三十二位超前进位加法器：</strong><br><img src="32bitALU/image9.png" alt="image9.png"></p>
 <h3 id="移位模块"><a href="#移位模块" class="headerlink" title="移位模块"></a>移位模块</h3><p>采用门电路设计，由 1bit 移位模块、2bit 移位模块、4 bit 移位模块、8 bit 移位模块、16 bit 移位模块共五个模块构成 32 位移位模块。</p>
 <p>移位功能分为四种不同的类型，分别为逻辑左移、逻辑右移、循环左 移和循环右移。<br>根据输入的两位操作数 dir 来调用不同的功能，之后再根据输入的 5 位操作数 bite 来判断移位的位数，移位位数范围从 0 到 31。</p>
 <ul>
@@ -322,17 +322,17 @@
 <li><strong>从右截取：</strong> dir取00。</li>
 <li><strong>从左截取：</strong> dir取10。</li>
 </ul>
-<h4 id="具体原理：-2"><a href="#具体原理：-2" class="headerlink" title="具体原理："></a>具体原理：</h4><p><strong>译码器：</strong><br>将输入的 5 位操作数 bite 通过译码器，输出的 32 种组合中，每一种组合中 只有一位输出为 1，其余输出为 0。输出的 32 种组合与输入的 5 位变量的最小项 一一对应。<br><img src="image10.png" alt="image10.png"></p>
-<p><strong>从右截取：</strong><br>in 端口输入 0，若 J[n]为 1，则 J[n-1]…J[0]对应的或门输出结果都为 1，将 输出结果与输入的目标数 1 按位相与，输出 s。J[31]…J[n+1]所对应的输出都 被置为 0，而 J[n]…J[0]对应的输出保持原样。<br><img src="image11.png" alt="image11.png"></p>
-<p><strong>从左截取：</strong><br>in 端口输入 0，若 J[n]为 1，则 J[n-1]…J[0]对应的或门输出结果都为 1，将 输出结果与输入的目标数 1 按互补位相与，输出 s。J[n-1]…J[0]所对应的输出 都被置为 0，而 J[31]…J[n]对应的输出保持原样。<br><img src="image12.png" alt="image12.png"></p>
+<h4 id="具体原理：-2"><a href="#具体原理：-2" class="headerlink" title="具体原理："></a>具体原理：</h4><p><strong>译码器：</strong><br>将输入的 5 位操作数 bite 通过译码器，输出的 32 种组合中，每一种组合中 只有一位输出为 1，其余输出为 0。输出的 32 种组合与输入的 5 位变量的最小项 一一对应。<br><img src="32bitALU/image10.png" alt="image10.png"></p>
+<p><strong>从右截取：</strong><br>in 端口输入 0，若 J[n]为 1，则 J[n-1]…J[0]对应的或门输出结果都为 1，将 输出结果与输入的目标数 1 按位相与，输出 s。J[31]…J[n+1]所对应的输出都 被置为 0，而 J[n]…J[0]对应的输出保持原样。<br><img src="32bitALU/image11.png" alt="image11.png"></p>
+<p><strong>从左截取：</strong><br>in 端口输入 0，若 J[n]为 1，则 J[n-1]…J[0]对应的或门输出结果都为 1，将 输出结果与输入的目标数 1 按互补位相与，输出 s。J[n-1]…J[0]所对应的输出 都被置为 0，而 J[31]…J[n]对应的输出保持原样。<br><img src="32bitALU/image12.png" alt="image12.png"></p>
 <h3 id="逻辑与"><a href="#逻辑与" class="headerlink" title="逻辑与"></a>逻辑与</h3><p>实现两个给定 32 位目标数之间的与运算，输出 32 位与运算后的结果。 输入两个目标数 a、b,输出结果 s。 </p>
-<p><strong>具体原理：</strong><br><img src="image13.png" alt="image13.png"></p>
+<p><strong>具体原理：</strong><br><img src="32bitALU/image13.png" alt="image13.png"></p>
 <h3 id="逻辑或"><a href="#逻辑或" class="headerlink" title="逻辑或"></a>逻辑或</h3><p>实现两个给定 32 位目标数之间的或运算，输出 32 位或运算后的结果。 输入两个目标数 a、b,输出结果 s。</p>
-<p><strong>具体原理：</strong><br><img src="image14.png" alt="image14.png"></p>
+<p><strong>具体原理：</strong><br><img src="32bitALU/image14.png" alt="image14.png"></p>
 <h3 id="逻辑非"><a href="#逻辑非" class="headerlink" title="逻辑非"></a>逻辑非</h3><p>实现一个给定 32 位的非运算，输出 32 位非运算后的结果。 输入一个目标数 a，输出结果 s。</p>
-<p><strong>具体原理：</strong><br><img src="image15.png" alt="image15.png"></p>
+<p><strong>具体原理：</strong><br><img src="32bitALU/image15.png" alt="image15.png"></p>
 <h3 id="逻辑异或"><a href="#逻辑异或" class="headerlink" title="逻辑异或"></a>逻辑异或</h3><p>实现两个给定 32 位目标数之间的异或运算，输出 32 位异或运算后的结果。 输入两个目标数 a、b,输出结果 s </p>
-<p><strong>具体原理：</strong><br><img src="image16.png" alt="image16.png"></p>
+<p><strong>具体原理：</strong><br><img src="32bitALU/image16.png" alt="image16.png"></p>
 <h3 id="译码器"><a href="#译码器" class="headerlink" title="译码器"></a>译码器</h3><p>输出的 8 种组合与输入的 3 位变量的最小项一一对应。</p>
 <table>
 <thead>
@@ -654,7 +654,7 @@
         <li>Post author：XieTao</li>
         <li>Create time：2021-11-13 11:54:04</li>
         <li>
-            Post link：https://xietao.site/2021/11/13/基于Vivado的32位ALU设计/
+            Post link：https://xietao.site/32bitALU.html
         </li>
         <li>
             Copyright Notice：All articles in this blog are licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> unless stating additionally.
@@ -685,7 +685,7 @@
                     <div class="article-prev">
                         <a class="prev"
                            rel="prev"
-                           href="/2021/12/06/%E5%9F%BA%E4%BA%8EVivado%E7%9A%8432%E4%BD%8D%E6%97%A0%E7%AC%A6%E5%8F%B7%E6%95%B0%E6%8E%92%E5%BA%8F%E6%A8%A1%E5%9D%97/"
+                           href="/sortingmodule"
                         >
                             <span class="left arrow-icon flex-center">
                               <i class="fas fa-chevron-left"></i>
@@ -701,7 +701,7 @@
                     <div class="article-next">
                         <a class="next"
                            rel="next"
-                           href="/2021/10/31/C-%E5%9F%BA%E7%A1%80%E8%AF%AD%E6%B3%95%E9%83%A8%E5%88%86%E6%80%BB%E7%BB%93/"
+                           href="/basic_cpp"
                         >
                             <span class="title flex-center">
                                 <span class="post-nav-title-item">C++基础语法部分总结</span>
