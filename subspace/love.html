@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Love</title>
+  <link rel="shortcut icon" href="../images/logo.svg">
+
+  <style>
+    html,
+    body {
+      width: 100%;
+      height: 100%;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family:
+        fangsong,
+        -apple-system,
+        BlinkMacSystemFont,
+        "Segoe UI",
+        Roboto,
+        Oxygen-Sans,
+        Ubuntu,
+        Cantarell,
+        "Helvetica Neue",
+        sans-serif;
+    }
+
+    .back {
+      z-index: -1;
+      position: fixed;
+      padding: 0;
+      margin: 0;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #fff6c6;
+      animation-name: back;
+      animation-duration: 3s;
+      animation-iteration-count: infinite;
+    }
+
+    @keyframes back {
+      50% {
+        background: #b7fbcd;
+      }
+    }
+
+    /*love_bigger*/
+    .love_bigger {
+      z-index: 1;
+      position: absolute;
+      background-color: #fd4b4b;
+      width: 125px;
+      height: 125px;
+      margin: auto;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      transform: rotate(-45deg);
+      animation-name: love_bigger;
+      animation-duration: 2s;
+      animation-delay: 1.7s;
+      animation-iteration-count: infinite;
+    }
+
+    .love_bigger::before {
+      content: "";
+      position: absolute;
+      background-color: #fd4b4b;
+      border-radius: 50%;
+      width: 125px;
+      height: 125px;
+      top: -62.5px;
+      left: 0px;
+    }
+
+    .love_bigger::after {
+      content: "";
+      position: absolute;
+      background-color: #fd4b4b;
+      border-radius: 50%;
+      width: 125px;
+      height: 125px;
+      left: 62.5px;
+      top: 0px;
+    }
+
+    @keyframes love_bigger {
+      50% {
+        transform: scale(0.5) rotate(-45deg);
+      }
+    }
+
+    /*love_smaller*/
+    .love_smaller {
+      z-index: 4;
+      position: absolute;
+      background-color: #ffb1be;
+      width: 62.5px;
+      height: 62.5px;
+      margin: auto;
+      top: 0;
+      left: 0;
+      bottom: 0;
+      right: 0;
+      transform: rotate(-45deg);
+      animation-name: love_smaller;
+      animation-duration: 1s;
+      animation-delay: 1s;
+      animation-iteration-count: infinite;
+    }
+
+    .love_smaller::before {
+      content: "";
+      position: absolute;
+      background-color: #ffb1be;
+      border-radius: 50%;
+      width: 62.5px;
+      height: 62.5px;
+      top: -31.25px;
+      left: 0px;
+    }
+
+    .love_smaller::after {
+      content: "";
+      position: absolute;
+      background-color: #ffb1be;
+      border-radius: 50%;
+      width: 62.5px;
+      height: 62.5px;
+      left: 31.25px;
+      top: 0px;
+    }
+
+    @keyframes love_smaller {
+      50% {
+        transform: scale(1.25) rotate(-45deg);
+      }
+    }
+
+    /* Timer_container */
+    .Timer_container {
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      color: rgb(0, 0, 0);
+      text-align: center;
+      position: absolute;
+      z-index: 2;
+    }
+
+    h1 {
+      font-size: 3em;
+      font-weight: normal;
+      letter-spacing: .125rem;
+    }
+
+    li {
+      display: inline-block;
+      font-size: 2em;
+      list-style-type: none;
+      padding: 1em;
+    }
+
+    li span {
+      display: block;
+      font-size: 5rem;
+    }
+
+    #hearts {
+      z-index: 3;
+    }
+
+    #song {
+      z-index: 8;
+    }
+  </style>
+</head>
+
+<body>
+  <css-doodle grid="5" id="hearts">
+    :doodle {
+    @grid: 10 / 100%;
+    }
+    background: @pick(
+    #f86060, #b3db5e, #57a3ff, #ffde0b, #ffa03b
+    );
+
+    transform: translate(
+    @rand(-50vw, 50vw),
+    @rand(-50vh, 50vh)
+    );
+
+    @size: 3.5vmin;
+    @shape: heart;
+    @place-cell: 50% 50%;
+
+    animation-name: explosion;
+    animation-iteration-count: infinite;
+    animation-direction: reverse;
+    animation-duration: calc(@rand(2s, 5s, .1));
+    animation-delay: calc(@rand(-5s, -1s, .1));
+    animation-timing-function:
+    cubic-bezier(.84, .02, 1, 1);
+
+    @keyframes explosion {
+    0% { opacity: 0; }
+    70% { opacity: 1; }
+    100% { transform: translate(0, 0); }
+    }
+  </css-doodle>
+  <div class="back"></div>
+  <div class="love_bigger"></div>
+  <div class="love_smaller"></div>
+  <div class="Timer_container">
+    <h1 id="headline">谢焘💖卓颖</br>已经在一起这么久啦</br>.</h1>
+    <div>
+      <ul>
+        <li><span id="days"></span>天</li>
+        <li><span id="hours"></span>时</li>
+        <li><span id="minutes"></span>分</li>
+        <li><span id="seconds"></span>秒</li>
+        <li> </li>
+      </ul>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+    const second = 1000,
+        minute = second * 60,
+        hour = minute * 60,
+        day = hour * 24;
+
+    const together = new Date(2020, 11, 26, 13, 14, 52).getTime();
+    setInterval(function () {
+        const now = new Date().getTime(),
+            distance = now - together;
+
+        document.getElementById("days").innerText = String(Math.floor(distance / (day))).padStart(2, "0"),
+            document.getElementById("hours").innerText = String(Math.floor((distance % (day)) / (hour))).padStart(2, "0"),
+            document.getElementById("minutes").innerText = String(Math.floor((distance % (hour)) / (minute))).padStart(2, "0"),
+            document.getElementById("seconds").innerText = String(Math.floor((distance % (minute)) / second)).padStart(2, "0");
+    }, 0)
+}());
+  </script>
+  <script src='https://cdnjs.cloudflare.com/ajax/libs/css-doodle/0.5.1/css-doodle.min.js'></script>
+
+</body>
+
+</html>
