@@ -1,0 +1,930 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="XieTao">
+    
+    <title>
+        
+            基于Vivado的32位ALU设计 |
+        
+        谢焘的个人站
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/logo.svg">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/css/font-awesome.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"xietao.site","root":"/","language":"en","path":"search.json"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":false,"init_open":true},"style":{"primary_color":"#CC0000","avatar":"/images/cat.JPG","favicon":"/images/logo.svg","article_img_align":"center","left_side_width":"260px","content_max_width":"930px","hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"但行好事，莫问前程。"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":true}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":true,"style":"mac"},"pjax":{"enable":true},"lazyload":{"enable":false},"version":"3.4.5"};
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+  </script>
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <span class="pjax-progress-icon">
+            <i class="fas fa-circle-notch fa-spin"></i>
+        </span>
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                谢焘的个人站
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                HOME
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                ARCHIVES
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                CATEGORIES
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/about"
+                            >
+                                ABOUT
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/subspace"
+                            >
+                                SUBSPACE
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">HOME</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">ARCHIVES</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">CATEGORIES</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/about">ABOUT</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/subspace">SUBSPACE</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">基于Vivado的32位ALU设计</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/cat.JPG">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">XieTao</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;
+        <span class="pc">2021-11-13 11:54:04</span>
+        <span class="mobile">2021-11-13 11:54</span>
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/projects/">projects</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/Vivado/">Vivado</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/Verilog/">Verilog</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fas fa-file-word"></i>&nbsp;<span>2.6k Words</span>
+        </span>
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fas fa-clock"></i>&nbsp;<span>10 Mins</span>
+        </span>
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <p>使用Verilog语言结构化描述方式设计一个32位ALU，具有32位无符号数加法、逻辑运算、移位、截断等功能。</p>
+<span id="more"></span>
+
+<p><strong>项目已开源，<a class="link"   target="_blank" rel="noopener" href="https://github.com/xietao02/32bit_ALU" >点击此处查看<i class="fas fa-external-link-alt"></i></a></strong></p>
+<h1 id="项目简述"><a href="#项目简述" class="headerlink" title="项目简述"></a>项目简述</h1><h2 id="项目环境与描述方式"><a href="#项目环境与描述方式" class="headerlink" title="项目环境与描述方式"></a>项目环境与描述方式</h2><p><strong>设计语言：</strong> Verilog硬件描述语言<br><strong>开发环境：</strong> Vivado 2019.2<br><strong>测试环境：</strong> LS-CPU-EXB-002实验箱，搭载Xilinx Artix-7 xc7a200tfbg676-2<br><strong>描述方式：</strong> 结构化描述方式</p>
+<h2 id="设计目标"><a href="#设计目标" class="headerlink" title="设计目标"></a>设计目标</h2><p>使用Verilog语言结构化描述一个32位ALU，具有以下功能：</p>
+<ul>
+<li>32位无符号数加法</li>
+<li>32位无符号数移位、32位无符号数截断</li>
+<li>32位数逻辑与、32位数逻辑或、32位数逻辑非、32位数逻辑异或</li>
+</ul>
+<h2 id="实现情况"><a href="#实现情况" class="headerlink" title="实现情况"></a>实现情况</h2><p>将上述功能集成至一个顶层模块中，其中顶层模块包括：</p>
+<table>
+<thead>
+<tr>
+<th align="left"><strong>输入变量</strong></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">[31:0] a</td>
+<td>32位操作数1</td>
+</tr>
+<tr>
+<td align="left">[31:0] b</td>
+<td>32位操作数2</td>
+</tr>
+<tr>
+<td align="left">CI</td>
+<td>1位进位输入，用于加法初始进位</td>
+</tr>
+<tr>
+<td align="left">[2:0] F</td>
+<td>3位输入，用于功能选择</td>
+</tr>
+<tr>
+<td align="left">[1:0] dir</td>
+<td>2位输入，用于移位或截断方向的选择</td>
+</tr>
+<tr>
+<td align="left">[4:0] bite</td>
+<td>5位输入，用于移位位数或截断位数的选择</td>
+</tr>
+<tr>
+<td align="left"><strong>输出变量</strong></td>
+<td></td>
+</tr>
+<tr>
+<td align="left">[31:0] S</td>
+<td>32位输出，用于输出结果</td>
+</tr>
+<tr>
+<td align="left">CO</td>
+<td>1位输出，用于加法结果第33位进位输出</td>
+</tr>
+</tbody></table>
+<h1 id="实现细节"><a href="#实现细节" class="headerlink" title="实现细节"></a>实现细节</h1><h2 id="主要模块"><a href="#主要模块" class="headerlink" title="主要模块"></a>主要模块</h2><h3 id="加法模块"><a href="#加法模块" class="headerlink" title="加法模块"></a>加法模块</h3><p>加法模块采用了组间、组内并行的超前进位方式设计</p>
+<p>首先构造出一个1-bit全加器，在构建一个4-bit CLA组件，通过整合四个1-bit全加器和一个4-bit CLA组件，得到一个4-bit超前进位加法器。在使用四个4-bit超前进位加法器，整合而成一个16-bit超前进位加法器，最后使用两个16-bit超前进位加法器即可完成32-bit超前进位加法器。<br>其中，超前进位模块在运算时为每一位计算提供CI的进位信息，相比较行波进位的方式，该方式能有效控制由于门电路堆叠造成的延迟时间。</p>
+<h4 id="具体原理："><a href="#具体原理：" class="headerlink" title="具体原理："></a><strong>具体原理：</strong></h4><p>设二进制加法器第 i 位为Ai，Bi，输出为Si，进位输入为Ci，进位输出为C(i+1)，则有：<br><img src="32bitALU/image1.png" alt="image1.png"></p>
+<p><strong>四位超前进位模块公式：</strong><br><img src="32bitALU/image2.png" alt="image2.png"></p>
+<p><strong>四位超前进位模块：</strong><br><img src="32bitALU/image3.png" alt="image3.png"></p>
+<p><strong>四位超前进位加法器</strong><br><img src="32bitALU/image4.png" alt="image4.png"></p>
+<p><strong>封装后的四位超前进位加法器：</strong><br><img src="32bitALU/image5.png" alt="image5.png"></p>
+<p><strong>因为</strong><br><img src="32bitALU/image6.png" alt="image6.png"><br><strong>通过类比法可得：</strong><br><img src="32bitALU/image7.png" alt="image7.png"></p>
+<p><strong>十六位超前进位加法器：</strong><br><img src="32bitALU/image8.png" alt="image8.png"></p>
+<p><strong>三十二位超前进位加法器：</strong><br><img src="32bitALU/image9.png" alt="image9.png"></p>
+<h3 id="移位模块"><a href="#移位模块" class="headerlink" title="移位模块"></a>移位模块</h3><p>采用门电路设计，由 1bit 移位模块、2bit 移位模块、4 bit 移位模块、8 bit 移位模块、16 bit 移位模块共五个模块构成 32 位移位模块。</p>
+<p>移位功能分为四种不同的类型，分别为逻辑左移、逻辑右移、循环左 移和循环右移。<br>根据输入的两位操作数 dir 来调用不同的功能，之后再根据输入的 5 位操作数 bite 来判断移位的位数，移位位数范围从 0 到 31。</p>
+<ul>
+<li>逻辑左移： dir 取 00。将目标数向左移动，最低位补 0。 </li>
+<li>逻辑右移： dir 取 10。将目标数向右移动，最高位补 0。 </li>
+<li>循环左移： dir 取 01。将目标数循环左移，右侧用原符号位补齐。</li>
+<li>循环右移： dir 取 11。将目标数循环右移，左侧用原符号位补齐。</li>
+</ul>
+<h4 id="具体原理：-1"><a href="#具体原理：-1" class="headerlink" title="具体原理："></a><strong>具体原理：</strong></h4><p><strong>shifter_1bit：</strong><br><strong>译码器：</strong><br>将输入的 2 位操作数 dir 通过译码器，输出接 wire [3:0] f，作为 功能使能信号,输出的 4 种组合中，每一种组合中只有一位输出为 1，其余三 位输出为 0。<br><strong>循环左移：</strong><br>将 32 位输入信号与功能信号 f[0],移位使能信号 enable 相与，结 果错位输出，错位距离为 1bit，例：输入第 30 位接输出第 31 位。<br><strong>循环右移：</strong><br>基本同循环左移，功能信号为 f[2],需更改错位的方向，例：输入 第 31 位接输出第 30 位。<br><strong>逻辑左移：</strong><br>功能信号为 f[1],移位后溢出的位直接丢弃，空余的位接 0 信号输 出，输入输出的每一位对应方法同循环左移。<br><strong>逻辑右移：</strong><br>功能信号为 f[3],基本同逻辑左移，只需更改接相应输入输出每一 位对应的方法。</p>
+<p> <strong>shifter_2bit、shifter_4bit、shifter_8bit、shifter_16bit：</strong> 基本同上， 只需将输入输出的错位距离更改为 2、4、8、16 位即可。</p>
+<h3 id="截断模块"><a href="#截断模块" class="headerlink" title="截断模块"></a>截断模块</h3><p>本项目实现的截断功能是从目标数中截取出指定位数数据，其余位数上数据置 0。<br>功能分为了两种不同的类型，分别为从左（高位）截取和从右（低位）截 取。<br>根据输入的两位操作数 dir 来调用不同的功能，之后再根据输入的 5 位操作数 bite 来判断截取的位数，截取位数范围从 1 到 32，截位始端都从目标数左端或右 端开始。</p>
+<ul>
+<li><strong>从右截取：</strong> dir取00。</li>
+<li><strong>从左截取：</strong> dir取10。</li>
+</ul>
+<h4 id="具体原理：-2"><a href="#具体原理：-2" class="headerlink" title="具体原理："></a>具体原理：</h4><p><strong>译码器：</strong><br>将输入的 5 位操作数 bite 通过译码器，输出的 32 种组合中，每一种组合中 只有一位输出为 1，其余输出为 0。输出的 32 种组合与输入的 5 位变量的最小项 一一对应。<br><img src="32bitALU/image10.png" alt="image10.png"></p>
+<p><strong>从右截取：</strong><br>in 端口输入 0，若 J[n]为 1，则 J[n-1]…J[0]对应的或门输出结果都为 1，将 输出结果与输入的目标数 1 按位相与，输出 s。J[31]…J[n+1]所对应的输出都 被置为 0，而 J[n]…J[0]对应的输出保持原样。<br><img src="32bitALU/image11.png" alt="image11.png"></p>
+<p><strong>从左截取：</strong><br>in 端口输入 0，若 J[n]为 1，则 J[n-1]…J[0]对应的或门输出结果都为 1，将 输出结果与输入的目标数 1 按互补位相与，输出 s。J[n-1]…J[0]所对应的输出 都被置为 0，而 J[31]…J[n]对应的输出保持原样。<br><img src="32bitALU/image12.png" alt="image12.png"></p>
+<h3 id="逻辑与"><a href="#逻辑与" class="headerlink" title="逻辑与"></a>逻辑与</h3><p>实现两个给定 32 位目标数之间的与运算，输出 32 位与运算后的结果。 输入两个目标数 a、b,输出结果 s。 </p>
+<p><strong>具体原理：</strong><br><img src="32bitALU/image13.png" alt="image13.png"></p>
+<h3 id="逻辑或"><a href="#逻辑或" class="headerlink" title="逻辑或"></a>逻辑或</h3><p>实现两个给定 32 位目标数之间的或运算，输出 32 位或运算后的结果。 输入两个目标数 a、b,输出结果 s。</p>
+<p><strong>具体原理：</strong><br><img src="32bitALU/image14.png" alt="image14.png"></p>
+<h3 id="逻辑非"><a href="#逻辑非" class="headerlink" title="逻辑非"></a>逻辑非</h3><p>实现一个给定 32 位的非运算，输出 32 位非运算后的结果。 输入一个目标数 a，输出结果 s。</p>
+<p><strong>具体原理：</strong><br><img src="32bitALU/image15.png" alt="image15.png"></p>
+<h3 id="逻辑异或"><a href="#逻辑异或" class="headerlink" title="逻辑异或"></a>逻辑异或</h3><p>实现两个给定 32 位目标数之间的异或运算，输出 32 位异或运算后的结果。 输入两个目标数 a、b,输出结果 s </p>
+<p><strong>具体原理：</strong><br><img src="32bitALU/image16.png" alt="image16.png"></p>
+<h3 id="译码器"><a href="#译码器" class="headerlink" title="译码器"></a>译码器</h3><p>输出的 8 种组合与输入的 3 位变量的最小项一一对应。</p>
+<table>
+<thead>
+<tr>
+<th>输入</th>
+<th></th>
+<th></th>
+<th>输出</th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td>F2</td>
+<td>F1</td>
+<td>F0</td>
+<td>Y0</td>
+<td>Y1</td>
+<td>Y2</td>
+<td>Y3</td>
+<td>Y4</td>
+<td>Y5</td>
+<td>Y6</td>
+<td>Y7</td>
+</tr>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>0</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>1</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+<td>0</td>
+</tr>
+<tr>
+<td>1</td>
+<td>1</td>
+<td>1</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>0</td>
+<td>1</td>
+</tr>
+</tbody></table>
+<h3 id="顶层ALU模块"><a href="#顶层ALU模块" class="headerlink" title="顶层ALU模块"></a>顶层ALU模块</h3><p>首先设计实现不同功能的子模块，之后将这些子模块例化，集成到至同一个顶 层模块 ALU 中，然后设计译码器模块，通过译码器输入的不同来实现不同的子模 块的调用，从而实现不同的功能。 </p>
+<table>
+<thead>
+<tr>
+<th align="left"><strong>输入变量</strong></th>
+<th></th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">[31:0] a</td>
+<td>32位操作数1</td>
+</tr>
+<tr>
+<td align="left">[31:0] b</td>
+<td>32位操作数2</td>
+</tr>
+<tr>
+<td align="left">CI</td>
+<td>1位进位输入，用于加法初始进位</td>
+</tr>
+<tr>
+<td align="left">[2:0] F</td>
+<td>3位输入，用于功能选择</td>
+</tr>
+<tr>
+<td align="left">[1:0] dir</td>
+<td>2位输入，用于移位或截断方向的选择</td>
+</tr>
+<tr>
+<td align="left">[4:0] bite</td>
+<td>5位输入，用于移位位数或截断位数的选择</td>
+</tr>
+<tr>
+<td align="left"><strong>输出变量</strong></td>
+<td></td>
+</tr>
+<tr>
+<td align="left">[31:0] S</td>
+<td>32位输出，用于输出结果</td>
+</tr>
+<tr>
+<td align="left">CO</td>
+<td>1位输出，用于加法结果第33位进位输出</td>
+</tr>
+<tr>
+<td align="left"><strong>功能选择</strong></td>
+<td></td>
+</tr>
+<tr>
+<td align="left">F:000</td>
+<td>无功能，此项输出 ffffff</td>
+</tr>
+<tr>
+<td align="left">F:001</td>
+<td>加法功能</td>
+</tr>
+<tr>
+<td align="left">F:010</td>
+<td>移位功能</td>
+</tr>
+<tr>
+<td align="left">F:011</td>
+<td>截断功能</td>
+</tr>
+<tr>
+<td align="left">F:100</td>
+<td>逻辑与</td>
+</tr>
+<tr>
+<td align="left">F:101</td>
+<td>逻辑或</td>
+</tr>
+<tr>
+<td align="left">F:110</td>
+<td>逻辑非</td>
+</tr>
+<tr>
+<td align="left">F:111</td>
+<td>逻辑异或</td>
+</tr>
+</tbody></table>
+<h1 id="明细表"><a href="#明细表" class="headerlink" title="明细表"></a>明细表</h1><h2 id="细节明细表"><a href="#细节明细表" class="headerlink" title="细节明细表"></a>细节明细表</h2><table>
+<thead>
+<tr>
+<th>模块名</th>
+<th>模块输入</th>
+<th>模块输出</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>ALU_Display</td>
+<td>*</td>
+<td>*</td>
+<td>顶层模块，调用多个子模块</td>
+</tr>
+<tr>
+<td>ALU_32bit</td>
+<td>a:(32bit)目标数1、<br />b:(32bit)位目标数2、<br />CI:加法初始进位、<br />F:(3bit)功能选择、<br />dir:(2bit)移位或截断使用、<br />bite:(5bit)位数选择</td>
+<td>S:(32bit)结果输出、<br />CO:加法结果进位</td>
+<td>顶层模块，调用多个子模块</td>
+</tr>
+<tr>
+<td>Decoder_3To8</td>
+<td>a:(3bit)顶层模块 、F输入</td>
+<td>y:(8bit)与子模块输出相与</td>
+<td>译码器</td>
+</tr>
+<tr>
+<td>CLA_Add_32bit</td>
+<td>A:(32bit)目标数 1 输入、<br />B:(32bit)目标数 2 输入、<br />CI:初始进位输入</td>
+<td>S:(32bit)加法结果输出、<br />CO:加法结果进 位输出</td>
+<td>超前进位加法器</td>
+</tr>
+<tr>
+<td>Shifter_32bit</td>
+<td>a:(32bit)目标数1输入、<br />dir:(2bit)方向或功能判断、<br />bite:(5bit)移位位数</td>
+<td>result:(32bit)移位结果输出</td>
+<td>移位模块</td>
+</tr>
+<tr>
+<td>Decoder_2To4</td>
+<td>a:(2bit)移位器子模块dir输入</td>
+<td>y:(4bit)与子模 块目标数 1 相与</td>
+<td>译码器</td>
+</tr>
+<tr>
+<td>Truncate_32bit</td>
+<td>a:(32bit)目标数1输入、<br />dir:方向判断、<br />bite:(5bit)位数确定</td>
+<td>s:(32bit)截断结果输出</td>
+<td>截断模块</td>
+</tr>
+<tr>
+<td>Cut_decoder</td>
+<td>bite:(5bit)位数输入</td>
+<td>judge:(32bit) 译码结果输出</td>
+<td>截断模块子模块</td>
+</tr>
+<tr>
+<td>CutL</td>
+<td>dir:作为0使用、<br />a:目标数1输入、<br /> judge:(32bit)译码结果输入</td>
+<td>s:(32bit)从左端点开始截断结 果输出</td>
+<td>左截断</td>
+</tr>
+<tr>
+<td>CutR</td>
+<td>dir:取反，作为 0 使、<br />a:目标数1输入、<br />judge:(32bit)译码结果输入</td>
+<td>s:(32bit)从右端点开始截断结果输出</td>
+<td>截断器子模块：从右截断</td>
+</tr>
+<tr>
+<td>And_32bit</td>
+<td>a:(32bit)目标数 1 输入、<br />b:(32bit)目标数 2 输入</td>
+<td>s:(32bit)逻辑与结果输出</td>
+<td>逻辑与</td>
+</tr>
+<tr>
+<td>Or_32bit</td>
+<td>a:(32bit)目标数 1 输入、<br />b:(32bit)目标数 2 输入</td>
+<td>s:(32bit)逻辑或结果输出</td>
+<td>逻辑或</td>
+</tr>
+<tr>
+<td>Not_32bit</td>
+<td>a:(32bit)目标数 1 输入</td>
+<td>s:(32bit)逻辑非结果输出</td>
+<td>逻辑非</td>
+</tr>
+<tr>
+<td>Xor_32bit</td>
+<td>a:(32bit)目标数 1 输入、<br />b:(32bit)目标数 2 输入</td>
+<td>s:(32bit)逻辑异或结果输出</td>
+<td>逻辑异或</td>
+</tr>
+</tbody></table>
+
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li>Post title：基于Vivado的32位ALU设计</li>
+        <li>Post author：XieTao</li>
+        <li>Create time：2021-11-13 11:54:04</li>
+        <li>
+            Post link：https://xietao.site/32bitALU.html
+        </li>
+        <li>
+            Copyright Notice：All articles in this blog are licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> unless stating additionally.
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <ul class="post-tags-box">
+                
+                    <li class="tag-item">
+                        <a href="/tags/Vivado/">#Vivado</a>&nbsp;
+                    </li>
+                
+                    <li class="tag-item">
+                        <a href="/tags/Verilog/">#Verilog</a>&nbsp;
+                    </li>
+                
+            </ul>
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/sortingmodule"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">基于Vivado的32位无符号数排序模块</span>
+                                <span class="post-nav-item">Prev posts</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/basic_cpp"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">C++基础语法部分总结</span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2021</span>
+              -
+            
+            2024&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">XieTao</a>
+        </div>
+        
+            <script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        Totalview&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;|&nbsp;Theme&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.5</a>
+        </div>
+        
+            <div class="icp-info info-item"><a target="_blank" rel="nofollow" href="https://beian.miit.gov.cn">赣ICP备2021009840号</a></div>
+        
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%A1%B9%E7%9B%AE%E7%AE%80%E8%BF%B0"><span class="nav-number">1.</span> <span class="nav-text">项目简述</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A1%B9%E7%9B%AE%E7%8E%AF%E5%A2%83%E4%B8%8E%E6%8F%8F%E8%BF%B0%E6%96%B9%E5%BC%8F"><span class="nav-number">1.1.</span> <span class="nav-text">项目环境与描述方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BE%E8%AE%A1%E7%9B%AE%E6%A0%87"><span class="nav-number">1.2.</span> <span class="nav-text">设计目标</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0%E6%83%85%E5%86%B5"><span class="nav-number">1.3.</span> <span class="nav-text">实现情况</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0%E7%BB%86%E8%8A%82"><span class="nav-number">2.</span> <span class="nav-text">实现细节</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BB%E8%A6%81%E6%A8%A1%E5%9D%97"><span class="nav-number">2.1.</span> <span class="nav-text">主要模块</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8A%A0%E6%B3%95%E6%A8%A1%E5%9D%97"><span class="nav-number">2.1.1.</span> <span class="nav-text">加法模块</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%B7%E4%BD%93%E5%8E%9F%E7%90%86%EF%BC%9A"><span class="nav-number">2.1.1.1.</span> <span class="nav-text">具体原理：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%A7%BB%E4%BD%8D%E6%A8%A1%E5%9D%97"><span class="nav-number">2.1.2.</span> <span class="nav-text">移位模块</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%B7%E4%BD%93%E5%8E%9F%E7%90%86%EF%BC%9A-1"><span class="nav-number">2.1.2.1.</span> <span class="nav-text">具体原理：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%88%AA%E6%96%AD%E6%A8%A1%E5%9D%97"><span class="nav-number">2.1.3.</span> <span class="nav-text">截断模块</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%B7%E4%BD%93%E5%8E%9F%E7%90%86%EF%BC%9A-2"><span class="nav-number">2.1.3.1.</span> <span class="nav-text">具体原理：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%BB%E8%BE%91%E4%B8%8E"><span class="nav-number">2.1.4.</span> <span class="nav-text">逻辑与</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%BB%E8%BE%91%E6%88%96"><span class="nav-number">2.1.5.</span> <span class="nav-text">逻辑或</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%BB%E8%BE%91%E9%9D%9E"><span class="nav-number">2.1.6.</span> <span class="nav-text">逻辑非</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%BB%E8%BE%91%E5%BC%82%E6%88%96"><span class="nav-number">2.1.7.</span> <span class="nav-text">逻辑异或</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AF%91%E7%A0%81%E5%99%A8"><span class="nav-number">2.1.8.</span> <span class="nav-text">译码器</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%A1%B6%E5%B1%82ALU%E6%A8%A1%E5%9D%97"><span class="nav-number">2.1.9.</span> <span class="nav-text">顶层ALU模块</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%98%8E%E7%BB%86%E8%A1%A8"><span class="nav-number">3.</span> <span class="nav-text">明细表</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%86%E8%8A%82%E6%98%8E%E7%BB%86%E8%A1%A8"><span class="nav-number">3.1.</span> <span class="nav-text">细节明细表</span></a></li></ol></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="Search..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/dark-light-toggle.js"></script>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/local-search.js"></script>
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/code-copy.js"></script>
+
+
+
+
+<div class="post-scripts pjax">
+    
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/left-side-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/libs/anime.min.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/toc.js"></script>
+    
+</div>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/libs/pjax.min.js"></script>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        window.pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+            // scrollTo: true,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            KEEP.utils.pjaxProgressBarStart();
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            KEEP.utils.pjaxProgressBarEnd();
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
+            KEEP.refresh();
+        });
+    });
+</script>
+
+
+
+</body>
+</html>

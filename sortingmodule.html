@@ -1,0 +1,703 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="XieTao">
+    
+    <title>
+        
+            基于Vivado的32位无符号数排序模块 |
+        
+        谢焘的个人站
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/logo.svg">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/css/font-awesome.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"xietao.site","root":"/","language":"en","path":"search.json"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":false,"init_open":true},"style":{"primary_color":"#CC0000","avatar":"/images/cat.JPG","favicon":"/images/logo.svg","article_img_align":"center","left_side_width":"260px","content_max_width":"930px","hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"但行好事，莫问前程。"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":true}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":true,"style":"mac"},"pjax":{"enable":true},"lazyload":{"enable":false},"version":"3.4.5"};
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+  </script>
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <span class="pjax-progress-icon">
+            <i class="fas fa-circle-notch fa-spin"></i>
+        </span>
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                谢焘的个人站
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                HOME
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                ARCHIVES
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                CATEGORIES
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/about"
+                            >
+                                ABOUT
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/subspace"
+                            >
+                                SUBSPACE
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">HOME</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">ARCHIVES</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">CATEGORIES</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/about">ABOUT</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/subspace">SUBSPACE</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">基于Vivado的32位无符号数排序模块</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/cat.JPG">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">XieTao</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;
+        <span class="pc">2021-12-06 13:34:42</span>
+        <span class="mobile">2021-12-06 13:34</span>
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/projects/">projects</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/Vivado/">Vivado</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/Verilog/">Verilog</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fas fa-file-word"></i>&nbsp;<span>1.4k Words</span>
+        </span>
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fas fa-clock"></i>&nbsp;<span>4 Mins</span>
+        </span>
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <p>使用Verilog语言设计一个对16个32位无符号数进行排序的模块。</p>
+<span id="more"></span>
+
+<p><strong>项目已开源，<a class="link"   target="_blank" rel="noopener" href="https://github.com/xietao02/Sorting_Module" >点击此处查看<i class="fas fa-external-link-alt"></i></a></strong></p>
+<h1 id="项目简述"><a href="#项目简述" class="headerlink" title="项目简述"></a>项目简述</h1><h2 id="项目环境与描述方式"><a href="#项目环境与描述方式" class="headerlink" title="项目环境与描述方式"></a>项目环境与描述方式</h2><p><strong>设计语言：</strong> Verilog硬件描述语言<br><strong>开发环境：</strong> Vivado 2019.2<br><strong>测试环境：</strong> LS-CPU-EXB-002实验箱，搭载Xilinx Artix-7 xc7a200tfbg676-2<br><strong>描述方式：</strong> 结构化描述方式</p>
+<h2 id="设计目标"><a href="#设计目标" class="headerlink" title="设计目标"></a>设计目标</h2><p>采用Verilog语言描述一个对16个32位无符号数排序的运算电路。</p>
+<h2 id="实现情况"><a href="#实现情况" class="headerlink" title="实现情况"></a>实现情况</h2><p>采用双调排序算法，不同模块间并行计算的策略，实现了对输入的16个32位无序无符号数进行排序，并按升序输出的功能。</p>
+<p>此电路在Vivado和本地FPGA开发板上均调试运行成功。</p>
+<h1 id="实现细节"><a href="#实现细节" class="headerlink" title="实现细节"></a>实现细节</h1><h2 id="算法思想"><a href="#算法思想" class="headerlink" title="算法思想"></a>算法思想</h2><p><strong>双调序列（Bitonic Sequence）</strong>是指由一个非严格增序列X和非严格减序列Y（其中X的最小元素正好是Y的最大元素）构成的序列。</p>
+<p><strong>定义: 一个序列a1,a2,…,an是双调序列（Bitonic Sequence），如果:</strong></p>
+<p><strong>1.存在一个ak(1≤k≤n),使得a1≥…≥ak≤…≤an成立；或者</strong></p>
+<p><strong>2.序列能够循环移位满足条件（1）</strong></p>
+<p>简单来说，双调序列是一个先单调递增后单调递减（或者先单调递减后单调递增）的序列。</p>
+<p>而双调的归并网络是基于<strong>Batcher定理</strong>而构建的。</p>
+<p><strong>Batcher定理</strong>是说将任意一个长为2n的双调序列A分为等长的两半X和Y，将X中的元素与Y中的元素一一按原序比较，即 a[i]与 a [i + n]( i ≤ n )比较，将较大者放入MAX序列，较小者放入MIN序列。则得到的MAX和MIN序列仍然是<strong>双调序列</strong>，并且MAX序列中的任意一个元素不小于MIN序列中的任意一个元素。再分别对得到的所有MAX和MIN序列进行上述的重复操作，不断缩小序列的规模，直至所有MAX和MIN序列的规模数为2。对于最后得到的每个小序列b[i]而言，满足max(b[i])&lt;=min(b[i+1])，从而实现了整体序列内部元素的有序排列。</p>
+<p>因此，对于16个元素，我们可以使用以下步骤实现升序排序：</p>
+<ol>
+<li>相邻两个元素，两两之间进行比较，合并形成8个单调性相反的单调序列；</li>
+<li>对8个单调序列，两两合并，形成4个双调序列，分别按相反单调性排序，得到4个单调性相反的双调序列；</li>
+<li>对4个长度为4的相反单调性单调序列，相邻之间合并，生成两个长度为8的双调序列，分别按相反单调性排序；</li>
+<li>对2个长度为8的相反单调性单调序列，相邻之间合并，生成1个长度为16的双调序列，升序排序。</li>
+</ol>
+<p><strong>示意图</strong></p>
+<p><img src="sortingmodule/image1.png" alt="image1.png"></p>
+<h1 id="明细表"><a href="#明细表" class="headerlink" title="明细表"></a>明细表</h1><h2 id="模块明细表"><a href="#模块明细表" class="headerlink" title="模块明细表"></a>模块明细表</h2><table>
+<thead>
+<tr>
+<th>模块名</th>
+<th>模块输入</th>
+<th>模块输出</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>TestInboard</td>
+<td>*</td>
+<td>*</td>
+<td>实验箱调试使用</td>
+</tr>
+<tr>
+<td>Sorting_16</td>
+<td>16个32位数（乱序）</td>
+<td>16个32位数（升序）</td>
+<td>顶层模块，调用多个子模块以进行排序</td>
+</tr>
+<tr>
+<td>Bitonic_Sequence_4</td>
+<td>16个32位数（乱序）</td>
+<td>4组长度为4的双调序列</td>
+<td>将16个数分为4组长度为4的双调序列供后续模块使用</td>
+</tr>
+<tr>
+<td>Bitonic_Sequence_8</td>
+<td>4组长度为4的双调序列</td>
+<td>2组长度为8的双调序列</td>
+<td>将4组长度为4的双调序列分为2组长度为8的双调序列供后续模块使用</td>
+</tr>
+<tr>
+<td>Bitonic_Sequence_16</td>
+<td>2组长度为8的双调序列</td>
+<td>1组长度为16的双调序列</td>
+<td>将2组长度为8的双调序列分为1组长度为16的双调序列供后续模块使用</td>
+</tr>
+<tr>
+<td>ascendingSort_4</td>
+<td>1组长度为4的双调序列</td>
+<td>4个32位数（升序）</td>
+<td>将长度为4的双调序列转换为升序序列</td>
+</tr>
+<tr>
+<td>ascendingSort_8</td>
+<td>1组长度为8的双调序列</td>
+<td>8个32位数（升序）</td>
+<td>将长度为8的双调序列转换为升序序列</td>
+</tr>
+<tr>
+<td>ascendingSort_16</td>
+<td>1组长度为16的双调序列</td>
+<td>16个32位数（升序）</td>
+<td>将长度为16的双调序列转换为升序序列</td>
+</tr>
+<tr>
+<td>Swap</td>
+<td>2个长度为32的数</td>
+<td>按大小将两数输出</td>
+<td>2个32位数的大小比较模块</td>
+</tr>
+<tr>
+<td>Comparator_2bit</td>
+<td>2个2位数</td>
+<td>三种大小比较结果（大于、等于、小于）</td>
+<td>2个2位数的大小比较模块</td>
+</tr>
+<tr>
+<td>Comparator_4bit</td>
+<td>2个4位数</td>
+<td>三种大小比较结果（大于、等于、小于）</td>
+<td>2个4位数的大小比较模块</td>
+</tr>
+<tr>
+<td>Comparator_16bit</td>
+<td>2个16位数</td>
+<td>三种大小比较结果（大于、等于、小于）</td>
+<td>2个16位数的大小比较模块</td>
+</tr>
+<tr>
+<td>Comparator_32bit</td>
+<td>2个32位数</td>
+<td>三种大小比较结果（大于、等于、小于</td>
+<td>2个32位数的大小比较模块</td>
+</tr>
+<tr>
+<td>And_32bit</td>
+<td>1个32位数,1个1位数</td>
+<td>1个32位数</td>
+<td>根据一位使能信号决定32位数输出与否</td>
+</tr>
+<tr>
+<td>Or_3_32bit</td>
+<td>3个32位数</td>
+<td>1个32位数</td>
+<td>将三种比较结果中使能信号为真的数据输出</td>
+</tr>
+</tbody></table>
+<h2 id="文件明细表"><a href="#文件明细表" class="headerlink" title="文件明细表"></a>文件明细表</h2><table>
+<thead>
+<tr>
+<th>文件名</th>
+<th>包含模块</th>
+<th>描述</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Sorting_Lcd_Module.v</td>
+<td>Sorting_16,  lcd_module</td>
+<td>含lcd的顶层模块</td>
+</tr>
+<tr>
+<td>Swap_Module.v</td>
+<td>Swap</td>
+<td>数据交换</td>
+</tr>
+<tr>
+<td>Sorting_Module.v</td>
+<td>Sorting_16</td>
+<td>排序顶层模块</td>
+</tr>
+<tr>
+<td>Logic_Module.v</td>
+<td>And_32bit,  Or_3_32bit</td>
+<td>逻辑门模块，供最终输出使用</td>
+</tr>
+<tr>
+<td>Comparator_Module.v</td>
+<td>Comparator_2bit,  Comparator_4bit,  Comparator_16bit,  Comparator_32bit</td>
+<td>数据大小比较模块</td>
+</tr>
+<tr>
+<td>Bitonic_Sequence_Module.v</td>
+<td>Bitonic_Sequence_4,  Bitonic_Sequence_8,  Bitonic_Sequence_16</td>
+<td>双调序列生成模块</td>
+</tr>
+<tr>
+<td>ascendingSort_Module.v</td>
+<td>ascendingSort_4,  ascendingSort_8,  ascendingSort_16</td>
+<td>升序序列生成模块</td>
+</tr>
+<tr>
+<td>lcd_module.dcp</td>
+<td>实验资料自带</td>
+<td>lcd模块</td>
+</tr>
+</tbody></table>
+<h1 id="上板测试结果"><a href="#上板测试结果" class="headerlink" title="上板测试结果"></a>上板测试结果</h1><p><img src="sortingmodule/image2.jpg" alt="image2.jpg"></p>
+<p><img src="sortingmodule/image3.jpg" alt="image3.jpg"></p>
+
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li>Post title：基于Vivado的32位无符号数排序模块</li>
+        <li>Post author：XieTao</li>
+        <li>Create time：2021-12-06 13:34:42</li>
+        <li>
+            Post link：https://xietao.site/sortingmodule.html
+        </li>
+        <li>
+            Copyright Notice：All articles in this blog are licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> unless stating additionally.
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <ul class="post-tags-box">
+                
+                    <li class="tag-item">
+                        <a href="/tags/Vivado/">#Vivado</a>&nbsp;
+                    </li>
+                
+                    <li class="tag-item">
+                        <a href="/tags/Verilog/">#Verilog</a>&nbsp;
+                    </li>
+                
+            </ul>
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/StuInfoManageSys"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">基于QT的学生信息管理系统</span>
+                                <span class="post-nav-item">Prev posts</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/32bitALU"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">基于Vivado的32位ALU设计</span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2021</span>
+              -
+            
+            2024&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">XieTao</a>
+        </div>
+        
+            <script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        Totalview&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;|&nbsp;Theme&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.5</a>
+        </div>
+        
+            <div class="icp-info info-item"><a target="_blank" rel="nofollow" href="https://beian.miit.gov.cn">赣ICP备2021009840号</a></div>
+        
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%A1%B9%E7%9B%AE%E7%AE%80%E8%BF%B0"><span class="nav-number">1.</span> <span class="nav-text">项目简述</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A1%B9%E7%9B%AE%E7%8E%AF%E5%A2%83%E4%B8%8E%E6%8F%8F%E8%BF%B0%E6%96%B9%E5%BC%8F"><span class="nav-number">1.1.</span> <span class="nav-text">项目环境与描述方式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%BE%E8%AE%A1%E7%9B%AE%E6%A0%87"><span class="nav-number">1.2.</span> <span class="nav-text">设计目标</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0%E6%83%85%E5%86%B5"><span class="nav-number">1.3.</span> <span class="nav-text">实现情况</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%AE%9E%E7%8E%B0%E7%BB%86%E8%8A%82"><span class="nav-number">2.</span> <span class="nav-text">实现细节</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AE%97%E6%B3%95%E6%80%9D%E6%83%B3"><span class="nav-number">2.1.</span> <span class="nav-text">算法思想</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%98%8E%E7%BB%86%E8%A1%A8"><span class="nav-number">3.</span> <span class="nav-text">明细表</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A8%A1%E5%9D%97%E6%98%8E%E7%BB%86%E8%A1%A8"><span class="nav-number">3.1.</span> <span class="nav-text">模块明细表</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%87%E4%BB%B6%E6%98%8E%E7%BB%86%E8%A1%A8"><span class="nav-number">3.2.</span> <span class="nav-text">文件明细表</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%8A%E6%9D%BF%E6%B5%8B%E8%AF%95%E7%BB%93%E6%9E%9C"><span class="nav-number">4.</span> <span class="nav-text">上板测试结果</span></a></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="Search..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/dark-light-toggle.js"></script>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/local-search.js"></script>
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/code-copy.js"></script>
+
+
+
+
+<div class="post-scripts pjax">
+    
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/left-side-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/libs/anime.min.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/toc.js"></script>
+    
+</div>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/libs/pjax.min.js"></script>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        window.pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+            // scrollTo: true,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            KEEP.utils.pjaxProgressBarStart();
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            KEEP.utils.pjaxProgressBarEnd();
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
+            KEEP.refresh();
+        });
+    });
+</script>
+
+
+
+</body>
+</html>

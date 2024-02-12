@@ -1,0 +1,699 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta name="keywords" content="Hexo Theme Keep">
+    <meta name="description" content="Hexo Theme Keep">
+    <meta name="author" content="XieTao">
+    
+    <title>
+        
+            基于QT的学生信息管理系统 |
+        
+        谢焘的个人站
+    </title>
+    
+<link rel="stylesheet" href="/css/style.css">
+
+    <link rel="shortcut icon" href="/images/logo.svg">
+    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/css/font-awesome.min.css">
+    <script id="hexo-configurations">
+    let KEEP = window.KEEP || {};
+    KEEP.hexo_config = {"hostname":"xietao.site","root":"/","language":"en","path":"search.json"};
+    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":false,"init_open":true},"style":{"primary_color":"#CC0000","avatar":"/images/cat.JPG","favicon":"/images/logo.svg","article_img_align":"center","left_side_width":"260px","content_max_width":"930px","hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"但行好事，莫问前程。"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":true}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":true,"style":"mac"},"pjax":{"enable":true},"lazyload":{"enable":false},"version":"3.4.5"};
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+  </script>
+<meta name="generator" content="Hexo 5.4.2"></head>
+
+
+<body>
+<div class="progress-bar-container">
+    
+        <span class="scroll-progress-bar"></span>
+    
+
+    
+        <span class="pjax-progress-bar"></span>
+        <span class="pjax-progress-icon">
+            <i class="fas fa-circle-notch fa-spin"></i>
+        </span>
+    
+</div>
+
+
+<main class="page-container">
+
+    
+
+    <div class="page-main-content">
+
+        <div class="page-main-content-top">
+            <header class="header-wrapper">
+
+    <div class="header-content">
+        <div class="left">
+            
+            <a class="logo-title" href="/">
+                谢焘的个人站
+            </a>
+        </div>
+
+        <div class="right">
+            <div class="pc">
+                <ul class="menu-list">
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/"
+                            >
+                                HOME
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/archives"
+                            >
+                                ARCHIVES
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/categories"
+                            >
+                                CATEGORIES
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/about"
+                            >
+                                ABOUT
+                            </a>
+                        </li>
+                    
+                        <li class="menu-item">
+                            <a class=""
+                               href="/subspace"
+                            >
+                                SUBSPACE
+                            </a>
+                        </li>
+                    
+                    
+                        <li class="menu-item search search-popup-trigger">
+                            <i class="fas fa-search"></i>
+                        </li>
+                    
+                </ul>
+            </div>
+            <div class="mobile">
+                
+                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
+                
+                <div class="icon-item menu-bar">
+                    <div class="menu-bar-middle"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="header-drawer">
+        <ul class="drawer-menu-list">
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/">HOME</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/archives">ARCHIVES</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/categories">CATEGORIES</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/about">ABOUT</a>
+                </li>
+            
+                <li class="drawer-menu-item flex-center">
+                    <a class=""
+                       href="/subspace">SUBSPACE</a>
+                </li>
+            
+        </ul>
+    </div>
+
+    <div class="window-mask"></div>
+
+</header>
+
+
+        </div>
+
+        <div class="page-main-content-middle">
+
+            <div class="main-content">
+
+                
+                    <div class="fade-in-down-animation">
+    <div class="article-content-container">
+
+        <div class="article-title">
+            <span class="title-hover-animation">基于QT的学生信息管理系统</span>
+        </div>
+
+        
+            <div class="article-header">
+                <div class="avatar">
+                    <img src="/images/cat.JPG">
+                </div>
+                <div class="info">
+                    <div class="author">
+                        <span class="name">XieTao</span>
+                        
+                    </div>
+                    <div class="meta-info">
+                        <div class="article-meta-info">
+    <span class="article-date article-meta-item">
+        <i class="fas fa-edit"></i>&nbsp;
+        <span class="pc">2021-12-10 21:23:42</span>
+        <span class="mobile">2021-12-10 21:23</span>
+    </span>
+    
+        <span class="article-categories article-meta-item">
+            <i class="fas fa-folder"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/categories/projects/">projects</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+    
+        <span class="article-tags article-meta-item">
+            <i class="fas fa-tags"></i>&nbsp;
+            <ul>
+                
+                    <li>
+                        <a href="/tags/C/">C++</a>&nbsp;
+                    </li>
+                
+                    <li>
+                        | <a href="/tags/Qt/">Qt</a>&nbsp;
+                    </li>
+                
+            </ul>
+        </span>
+    
+
+    
+    
+        <span class="article-wordcount article-meta-item">
+            <i class="fas fa-file-word"></i>&nbsp;<span>1.3k Words</span>
+        </span>
+    
+    
+        <span class="article-min2read article-meta-item">
+            <i class="fas fa-clock"></i>&nbsp;<span>5 Mins</span>
+        </span>
+    
+    
+        <span class="article-pv article-meta-item">
+            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
+        </span>
+    
+</div>
+
+                    </div>
+                </div>
+            </div>
+        
+
+        <div class="article-content markdown-body">
+            <p>基于Qt开发，数据库为SQLite。</p>
+<span id="more"></span>
+
+<p><strong>项目已开源，<a class="link"   target="_blank" rel="noopener" href="https://github.com/xietao02/StuInfo_Manage_System" >点击此处查看<i class="fas fa-external-link-alt"></i></a></strong></p>
+<h1 id="测试账号"><a href="#测试账号" class="headerlink" title="测试账号"></a>测试账号</h1><h2 id="教师端"><a href="#教师端" class="headerlink" title="教师端"></a>教师端</h2><table>
+<thead>
+<tr>
+<th>用户名</th>
+<th>密码</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>admin</td>
+<td>555</td>
+</tr>
+<tr>
+<td>老师A</td>
+<td>123</td>
+</tr>
+</tbody></table>
+<h2 id="学生端"><a href="#学生端" class="headerlink" title="学生端"></a>学生端</h2><table>
+<thead>
+<tr>
+<th>用户名</th>
+<th>密码</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>学生1</td>
+<td>111</td>
+</tr>
+<tr>
+<td>学生2</td>
+<td>222</td>
+</tr>
+<tr>
+<td>学生3</td>
+<td>333</td>
+</tr>
+<tr>
+<td>学生4</td>
+<td>444</td>
+</tr>
+<tr>
+<td>学生5</td>
+<td>555</td>
+</tr>
+<tr>
+<td>学生6</td>
+<td>666</td>
+</tr>
+<tr>
+<td>学生7</td>
+<td>777</td>
+</tr>
+<tr>
+<td>学生8</td>
+<td>888</td>
+</tr>
+<tr>
+<td>学生9</td>
+<td>999</td>
+</tr>
+</tbody></table>
+<h1 id="程序功能"><a href="#程序功能" class="headerlink" title="程序功能"></a>程序功能</h1><h2 id="登录端"><a href="#登录端" class="headerlink" title="登录端"></a>登录端</h2><p><img src="StuInfoManageSys/image1.png" alt="image1.png"></p>
+<p><img src="StuInfoManageSys/image2.png" alt="image2.png"></p>
+<ul>
+<li>用户密码输入为空检测</li>
+<li>enter快捷键登录</li>
+<li>右下角关于文档  获取帮助</li>
+</ul>
+<h2 id="学生端-1"><a href="#学生端-1" class="headerlink" title="学生端"></a>学生端</h2><p><img src="StuInfoManageSys/image3.png" alt="image3.png"></p>
+<ul>
+<li>所有课程成绩查询</li>
+<li>成绩降序/升序排列</li>
+<li>窗口自适应大小</li>
+</ul>
+<h2 id="教师端-1"><a href="#教师端-1" class="headerlink" title="教师端"></a>教师端</h2><h3 id="主面板"><a href="#主面板" class="headerlink" title="主面板"></a>主面板</h3><p><img src="StuInfoManageSys/image4.png" alt="image4.png"></p>
+<p><img src="StuInfoManageSys/image5.png" alt="image5.png"></p>
+<ul>
+<li>窗口自适应大小</li>
+<li>支持新增多班级的<strong>同名课程</strong></li>
+<li>双击列表默认打开课程管理面板，新增课程名为空检测，课程选择检测</li>
+<li>删除课程</li>
+</ul>
+<h3 id="管理面板"><a href="#管理面板" class="headerlink" title="管理面板"></a>管理面板</h3><p><img src="StuInfoManageSys/image6.png" alt="image6.png"></p>
+<p><img src="StuInfoManageSys/image7.png" alt="image7.png"></p>
+<ul>
+<li>班级成绩排名升序/降序排列</li>
+<li>窗口自适应大小</li>
+<li>班级成绩分析：及格/优秀 人数、比率；最高分、最低分 的分值、学生名单；平均分</li>
+<li>成绩分布图</li>
+<li>修改学生成绩，成绩区间0-100，可使用方向键快捷更改</li>
+<li>删除学生</li>
+</ul>
+<h3 id="新增学生面板"><a href="#新增学生面板" class="headerlink" title="新增学生面板"></a>新增学生面板</h3><p><img src="StuInfoManageSys/image8.png" alt="image8.png"></p>
+<ul>
+<li>窗口大小自适应</li>
+<li>批量增加学生</li>
+<li>enter快捷键增加</li>
+<li>学生姓名、成绩输入为空检测</li>
+</ul>
+<h1 id="项目框架"><a href="#项目框架" class="headerlink" title="项目框架"></a>项目框架</h1><h2 id="程序界面关系"><a href="#程序界面关系" class="headerlink" title="程序界面关系"></a>程序界面关系</h2><p><img src="StuInfoManageSys/image9.png" alt="image9.png"></p>
+<h2 id="工程管理文件-lt-配置项-gt"><a href="#工程管理文件-lt-配置项-gt" class="headerlink" title="工程管理文件 &lt;配置项&gt;"></a>工程管理文件 &lt;配置项&gt;</h2><h3 id="StuInfo-Manage-System-pro"><a href="#StuInfo-Manage-System-pro" class="headerlink" title="StuInfo_Manage_System.pro"></a>StuInfo_Manage_System.pro</h3><p><strong>项目所用模块：</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">QT += core gui sql charts</span><br></pre></td></tr></table></figure>
+
+<p><strong>项目所用头文件：</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">HEADERS += \</span><br><span class="line">    addstudent_window.h \</span><br><span class="line">    global.h \</span><br><span class="line">    mainwindow.h \</span><br><span class="line">    manage_window.h \</span><br><span class="line">    student_window.h \</span><br><span class="line">    teacher_window.h</span><br></pre></td></tr></table></figure>
+
+<p><strong>项目所用源文件：</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">SOURCES += \</span><br><span class="line">    addstudent_window.cpp \</span><br><span class="line">    global.cpp \</span><br><span class="line">    main.cpp \</span><br><span class="line">    mainwindow.cpp \</span><br><span class="line">    manage_window.cpp \</span><br><span class="line">    student_window.cpp \</span><br><span class="line">    teacher_window.cpp</span><br></pre></td></tr></table></figure>
+
+<p><strong>项目所用ui文件：</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">FORMS += \</span><br><span class="line">    addstudent_window.ui \</span><br><span class="line">    mainwindow.ui \</span><br><span class="line">    manage_window.ui \</span><br><span class="line">    student_window.ui \</span><br><span class="line">    teacher_window.ui</span><br></pre></td></tr></table></figure>
+
+<p><strong>项目所用资源文件</strong></p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">RESOURCES += \</span><br><span class="line">    setIcon.qrc</span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="具体结构"><a href="#具体结构" class="headerlink" title="具体结构"></a>具体结构</h1><h2 id="类"><a href="#类" class="headerlink" title="类"></a>类</h2><h3 id="global"><a href="#global" class="headerlink" title="global"></a>global</h3><h4 id="数据成员"><a href="#数据成员" class="headerlink" title="数据成员"></a>数据成员</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">static</span> QSqlDatabase db;			<span class="comment">//实例化一个数据库连接</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="函数成员"><a href="#函数成员" class="headerlink" title="函数成员"></a>函数成员</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">Global::ins_db</span><span class="params">()</span></span>;			<span class="comment">//用于初始化数据库的连接</span></span><br><span class="line"><span class="function"><span class="type">static</span> QSqlDatabase <span class="title">getdb</span><span class="params">()</span></span>;	<span class="comment">//其他类获取数据库连接db的接口</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="mainwindow"><a href="#mainwindow" class="headerlink" title="mainwindow"></a>mainwindow</h3><h4 id="数据成员-1"><a href="#数据成员-1" class="headerlink" title="数据成员"></a>数据成员</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Teacher_Window *w1;				<span class="comment">//储存教师窗口实例化对象</span></span><br><span class="line">Student_Window *w2;				<span class="comment">//储存学生窗口实例化对象</span></span><br><span class="line">QString Username_this;			<span class="comment">//记录输入用户名</span></span><br><span class="line">QString Password_this;			<span class="comment">//记录输入密码</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="槽："><a href="#槽：" class="headerlink" title="槽："></a>槽：</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">Login_Button_clicked</span><span class="params">()</span></span>;	<span class="comment">//响应登录按钮</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">Signup_Button_clicked</span><span class="params">()</span></span>;	<span class="comment">//响应注册按钮</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">Reset_Button_clicked</span><span class="params">()</span></span>;	<span class="comment">//响应重置按钮</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">Input_Judge</span><span class="params">()</span></span>;			   <span class="comment">//判断输入是否为空</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="teacher-window"><a href="#teacher-window" class="headerlink" title="teacher_window"></a>teacher_window</h3><h4 id="数据成员："><a href="#数据成员：" class="headerlink" title="数据成员："></a>数据成员：</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">QWidget* top;					<span class="comment">//记录调用自己的parent对象</span></span><br><span class="line">QString classid_selected = <span class="string">&quot;&quot;</span>;	 <span class="comment">//记录选中的课程ID</span></span><br><span class="line">QString class_selected = <span class="string">&quot;&quot;</span>;	 <span class="comment">//记录选中的课程名</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="函数成员："><a href="#函数成员：" class="headerlink" title="函数成员："></a>函数成员：</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">reload_ClassList</span><span class="params">()</span></span>;	<span class="comment">//刷新课程名单</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">setupClassList</span><span class="params">()</span></span>;		<span class="comment">//初始化课程名单</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="槽：-1"><a href="#槽：-1" class="headerlink" title="槽："></a>槽：</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">getItem</span><span class="params">(<span class="type">int</span> row, <span class="type">int</span> column)</span></span>;		<span class="comment">//获取所选表格位置</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">Select_Judge</span><span class="params">()</span></span>;		<span class="comment">//判断是否选择课程，并选择调用管理按钮、删除按钮以及新增按钮</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">manage_button_clicked</span><span class="params">()</span></span>;			<span class="comment">//响应管理按钮</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">delete_button_clicked</span><span class="params">()</span></span>;			<span class="comment">//响应删除按钮</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">add_button_clicked</span><span class="params">()</span></span>;				<span class="comment">//响应新增按钮</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">exit_button_clicked</span><span class="params">()</span></span>;				<span class="comment">//返回至上一界面</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="manage-window"><a href="#manage-window" class="headerlink" title="manage_window"></a>manage_window</h3><h4 id="数据成员：-1"><a href="#数据成员：-1" class="headerlink" title="数据成员："></a>数据成员：</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">QWidget* top;				<span class="comment">//记录调用自己的parent对象</span></span><br><span class="line"><span class="type">int</span> distribution[<span class="number">10</span>];		<span class="comment">//记录班级成绩分布值</span></span><br><span class="line">QString student_selected;	<span class="comment">//记录选中的学生</span></span><br><span class="line">QString classid_this;		<span class="comment">//记录选中的课程</span></span><br><span class="line">QString classname_this;		<span class="comment">//记录选中的课程id</span></span><br><span class="line"><span class="type">int</span> grade;					<span class="comment">//记录从数据库返回的成绩</span></span><br><span class="line"><span class="type">int</span> highest_score;			<span class="comment">//记录班级最高成绩</span></span><br><span class="line"><span class="type">int</span> lowest_score;			<span class="comment">//记录班级最低成绩</span></span><br><span class="line"><span class="type">float</span> average_score;		<span class="comment">//记录班级平均成绩</span></span><br><span class="line"><span class="type">int</span> total;					<span class="comment">//记录班级总人数</span></span><br><span class="line"><span class="type">int</span> pass_num;				<span class="comment">//记录班级及格人数</span></span><br><span class="line"><span class="type">int</span> above_num;				<span class="comment">//记录班级优秀人数</span></span><br><span class="line">QString highest_stu = <span class="string">&quot;-&quot;</span>;	 <span class="comment">//记录最高分学生名单</span></span><br><span class="line">QString lowest_stu = <span class="string">&quot;-&quot;</span>;	<span class="comment">//记录最低分学生名单</span></span><br><span class="line"><span class="type">bool</span> order_mode = <span class="literal">true</span>;		<span class="comment">//记录成绩排序模式</span></span><br><span class="line">AddStudent_window* w1;		<span class="comment">//储存新增学生面板实例化对象</span></span><br><span class="line">QChartView *chartView;		<span class="comment">//储存新增图表视图实例化对象</span></span><br><span class="line">QChart *chart;				<span class="comment">//储存新增图标实例化对象</span></span><br><span class="line">QValueAxis *axisY;			<span class="comment">//储存Y轴实例化对象</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="函数成员：-1"><a href="#函数成员：-1" class="headerlink" title="函数成员："></a>函数成员：</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">setupList</span><span class="params">()</span></span>;			<span class="comment">//初始化StudentList</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">reload_analysis</span><span class="params">()</span></span>;		<span class="comment">//重新加载分析图表</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">CreateChart</span><span class="params">()</span></span>;			<span class="comment">//创建成绩分布图</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="信号："><a href="#信号：" class="headerlink" title="信号："></a>信号：</h4><p><strong>此处定义一个信号供setupList()使用</strong></p>
+<p>不直接在setupList()中调用该函数，是因为reload_StudentList()中会通过sender()来获取发射信号来调用自己的对象名，以实现成绩升序、降序排列<strong>（注意，reload_StudentList()是槽函数）</strong>，如果直接在setupList()中调用reload_StudentList()，sender()会报错。</p>
+<figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">init</span><span class="params">()</span></span>;		<span class="comment">//用于调用reload_StudentList(); </span></span><br></pre></td></tr></table></figure>
+
+<h4 id="槽：-2"><a href="#槽：-2" class="headerlink" title="槽："></a>槽：</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">exit_button_clicked</span><span class="params">()</span></span>;				<span class="comment">//返回至上一界面</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">reset_button_clicked</span><span class="params">()</span></span>;			<span class="comment">//响应修改成绩按钮</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">reload_StudentList</span><span class="params">()</span></span>;				<span class="comment">//重新加载StudentList</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">reloadChart</span><span class="params">()</span></span>;						<span class="comment">//重新加载成绩分布图</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">getItem</span><span class="params">(<span class="type">int</span> row, <span class="type">int</span> column)</span></span>;		 <span class="comment">//获取所选表格位置</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">delete_button_clicked</span><span class="params">()</span></span>;			<span class="comment">//响应删除按钮</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">add_button_clicked</span><span class="params">()</span></span>;				<span class="comment">//响应新增学生按钮</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">Select_Judge</span><span class="params">()</span></span>;					<span class="comment">//判断是否选择学生</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="addstudent-window"><a href="#addstudent-window" class="headerlink" title="addstudent_window"></a>addstudent_window</h3><h4 id="数据成员：-2"><a href="#数据成员：-2" class="headerlink" title="数据成员："></a>数据成员：</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">QWidget* top;				<span class="comment">//记录调用自己的parent对象</span></span><br><span class="line"><span class="type">int</span> addlist_rows = <span class="number">0</span>;		<span class="comment">//记录新增学生个数</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="信号：-1"><a href="#信号：-1" class="headerlink" title="信号："></a>信号：</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">reloadStudentList_signal</span><span class="params">()</span></span>;	<span class="comment">//重新加载manage_window中StudentList的信号</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">reloadChart_signal</span><span class="params">()</span></span>;			<span class="comment">//重新加载manage_window中成绩分布图的信号</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="槽：-3"><a href="#槽：-3" class="headerlink" title="槽："></a>槽：</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">add_student</span><span class="params">()</span></span>;			<span class="comment">//响应增加按钮</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">backTotop</span><span class="params">()</span></span>;			<span class="comment">//返回至上一界面</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="student-window"><a href="#student-window" class="headerlink" title="student_window"></a>student_window</h3><h4 id="数据成员：-3"><a href="#数据成员：-3" class="headerlink" title="数据成员："></a>数据成员：</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">QWidget* top;				<span class="comment">//记录调用自己的parent对象</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="函数成员：-2"><a href="#函数成员：-2" class="headerlink" title="函数成员："></a>函数成员：</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">setup_ClassList</span><span class="params">()</span></span>;		<span class="comment">//初始化学生成绩表</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="信号：-2"><a href="#信号：-2" class="headerlink" title="信号："></a>信号：</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">init</span><span class="params">()</span></span>;	<span class="comment">//同manage_window，用于避免sender()报错的同时调用load_ClassList()</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="槽：-4"><a href="#槽：-4" class="headerlink" title="槽："></a>槽：</h4><figure class="highlight c++"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="type">void</span> <span class="title">load_ClassList</span><span class="params">()</span></span>;			<span class="comment">//重新加载学生成绩表</span></span><br><span class="line"><span class="function"><span class="type">void</span> <span class="title">exit_button_clicked</span><span class="params">()</span></span>;		<span class="comment">//返回至上一界面</span></span><br></pre></td></tr></table></figure>
+
+
+
+<h1 id="具体实现"><a href="#具体实现" class="headerlink" title="具体实现"></a>具体实现</h1><p><strong>建议直接读相关函数的具体实现代码,需注意部分已注释，此处不在赘述。</strong></p>
+
+        </div>
+
+        
+            <div class="post-copyright-info">
+                <div class="article-copyright-info-container">
+    <ul>
+        <li>Post title：基于QT的学生信息管理系统</li>
+        <li>Post author：XieTao</li>
+        <li>Create time：2021-12-10 21:23:42</li>
+        <li>
+            Post link：https://xietao.site/StuInfoManageSys.html
+        </li>
+        <li>
+            Copyright Notice：All articles in this blog are licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> unless stating additionally.
+        </li>
+    </ul>
+</div>
+
+            </div>
+        
+
+        
+            <ul class="post-tags-box">
+                
+                    <li class="tag-item">
+                        <a href="/tags/C/">#C++</a>&nbsp;
+                    </li>
+                
+                    <li class="tag-item">
+                        <a href="/tags/Qt/">#Qt</a>&nbsp;
+                    </li>
+                
+            </ul>
+        
+
+        
+            <div class="article-nav">
+                
+                    <div class="article-prev">
+                        <a class="prev"
+                           rel="prev"
+                           href="/sklearn_RF"
+                        >
+                            <span class="left arrow-icon flex-center">
+                              <i class="fas fa-chevron-left"></i>
+                            </span>
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">鸢尾花分类的随机森林实现及结果可视化</span>
+                                <span class="post-nav-item">Prev posts</span>
+                            </span>
+                        </a>
+                    </div>
+                
+                
+                    <div class="article-next">
+                        <a class="next"
+                           rel="next"
+                           href="/sortingmodule"
+                        >
+                            <span class="title flex-center">
+                                <span class="post-nav-title-item">基于Vivado的32位无符号数排序模块</span>
+                                <span class="post-nav-item">Next posts</span>
+                            </span>
+                            <span class="right arrow-icon flex-center">
+                              <i class="fas fa-chevron-right"></i>
+                            </span>
+                        </a>
+                    </div>
+                
+            </div>
+        
+
+        
+    </div>
+</div>
+
+
+                
+            </div>
+
+        </div>
+
+        <div class="page-main-content-bottom">
+            <footer class="footer">
+    <div class="info-container">
+        <div class="copyright-info info-item">
+            &copy;
+            
+              <span>2021</span>
+              -
+            
+            2024&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">XieTao</a>
+        </div>
+        
+            <script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+            <div class="website-count info-item">
+                
+                
+                    <span id="busuanzi_container_site_pv">
+                        Totalview&nbsp;<span id="busuanzi_value_site_pv"></span>
+                    </span>
+                
+            </div>
+        
+        <div class="theme-info info-item">
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;|&nbsp;Theme&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.5</a>
+        </div>
+        
+            <div class="icp-info info-item"><a target="_blank" rel="nofollow" href="https://beian.miit.gov.cn">赣ICP备2021009840号</a></div>
+        
+        
+    </div>
+</footer>
+
+        </div>
+    </div>
+
+    
+        <div class="post-tools">
+            <div class="post-tools-container">
+    <ul class="tools-list">
+        <!-- TOC aside toggle -->
+        
+            <li class="tools-item page-aside-toggle">
+                <i class="fas fa-outdent"></i>
+            </li>
+        
+
+        <!-- go comment -->
+        
+    </ul>
+</div>
+
+        </div>
+    
+
+    <div class="right-bottom-side-tools">
+        <div class="side-tools-container">
+    <ul class="side-tools-list">
+        <li class="tools-item tool-font-adjust-plus flex-center">
+            <i class="fas fa-search-plus"></i>
+        </li>
+
+        <li class="tools-item tool-font-adjust-minus flex-center">
+            <i class="fas fa-search-minus"></i>
+        </li>
+
+        <li class="tools-item tool-expand-width flex-center">
+            <i class="fas fa-arrows-alt-h"></i>
+        </li>
+
+        <li class="tools-item tool-dark-light-toggle flex-center">
+            <i class="fas fa-moon"></i>
+        </li>
+
+        <!-- rss -->
+        
+
+        
+
+        <li class="tools-item tool-scroll-to-bottom flex-center">
+            <i class="fas fa-arrow-down"></i>
+        </li>
+    </ul>
+
+    <ul class="exposed-tools-list">
+        <li class="tools-item tool-toggle-show flex-center">
+            <i class="fas fa-cog fa-spin"></i>
+        </li>
+        
+            <li class="tools-item tool-scroll-to-top flex-center">
+                <i class="arrow-up fas fa-arrow-up"></i>
+                <span class="percent"></span>
+            </li>
+        
+    </ul>
+</div>
+
+    </div>
+
+    
+        <aside class="page-aside">
+            <div class="post-toc-wrap">
+    <div class="post-toc">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B5%8B%E8%AF%95%E8%B4%A6%E5%8F%B7"><span class="nav-number">1.</span> <span class="nav-text">测试账号</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%99%E5%B8%88%E7%AB%AF"><span class="nav-number">1.1.</span> <span class="nav-text">教师端</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%A6%E7%94%9F%E7%AB%AF"><span class="nav-number">1.2.</span> <span class="nav-text">学生端</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%A8%8B%E5%BA%8F%E5%8A%9F%E8%83%BD"><span class="nav-number">2.</span> <span class="nav-text">程序功能</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%99%BB%E5%BD%95%E7%AB%AF"><span class="nav-number">2.1.</span> <span class="nav-text">登录端</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%A6%E7%94%9F%E7%AB%AF-1"><span class="nav-number">2.2.</span> <span class="nav-text">学生端</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%99%E5%B8%88%E7%AB%AF-1"><span class="nav-number">2.3.</span> <span class="nav-text">教师端</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%BB%E9%9D%A2%E6%9D%BF"><span class="nav-number">2.3.1.</span> <span class="nav-text">主面板</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AE%A1%E7%90%86%E9%9D%A2%E6%9D%BF"><span class="nav-number">2.3.2.</span> <span class="nav-text">管理面板</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%96%B0%E5%A2%9E%E5%AD%A6%E7%94%9F%E9%9D%A2%E6%9D%BF"><span class="nav-number">2.3.3.</span> <span class="nav-text">新增学生面板</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%A1%B9%E7%9B%AE%E6%A1%86%E6%9E%B6"><span class="nav-number">3.</span> <span class="nav-text">项目框架</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A8%8B%E5%BA%8F%E7%95%8C%E9%9D%A2%E5%85%B3%E7%B3%BB"><span class="nav-number">3.1.</span> <span class="nav-text">程序界面关系</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B7%A5%E7%A8%8B%E7%AE%A1%E7%90%86%E6%96%87%E4%BB%B6-lt-%E9%85%8D%E7%BD%AE%E9%A1%B9-gt"><span class="nav-number">3.2.</span> <span class="nav-text">工程管理文件 &lt;配置项&gt;</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#StuInfo-Manage-System-pro"><span class="nav-number">3.2.1.</span> <span class="nav-text">StuInfo_Manage_System.pro</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%B7%E4%BD%93%E7%BB%93%E6%9E%84"><span class="nav-number">4.</span> <span class="nav-text">具体结构</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%B1%BB"><span class="nav-number">4.1.</span> <span class="nav-text">类</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#global"><span class="nav-number">4.1.1.</span> <span class="nav-text">global</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E6%88%90%E5%91%98"><span class="nav-number">4.1.1.1.</span> <span class="nav-text">数据成员</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%87%BD%E6%95%B0%E6%88%90%E5%91%98"><span class="nav-number">4.1.1.2.</span> <span class="nav-text">函数成员</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mainwindow"><span class="nav-number">4.1.2.</span> <span class="nav-text">mainwindow</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E6%88%90%E5%91%98-1"><span class="nav-number">4.1.2.1.</span> <span class="nav-text">数据成员</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A7%BD%EF%BC%9A"><span class="nav-number">4.1.2.2.</span> <span class="nav-text">槽：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#teacher-window"><span class="nav-number">4.1.3.</span> <span class="nav-text">teacher_window</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E6%88%90%E5%91%98%EF%BC%9A"><span class="nav-number">4.1.3.1.</span> <span class="nav-text">数据成员：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%87%BD%E6%95%B0%E6%88%90%E5%91%98%EF%BC%9A"><span class="nav-number">4.1.3.2.</span> <span class="nav-text">函数成员：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A7%BD%EF%BC%9A-1"><span class="nav-number">4.1.3.3.</span> <span class="nav-text">槽：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#manage-window"><span class="nav-number">4.1.4.</span> <span class="nav-text">manage_window</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E6%88%90%E5%91%98%EF%BC%9A-1"><span class="nav-number">4.1.4.1.</span> <span class="nav-text">数据成员：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%87%BD%E6%95%B0%E6%88%90%E5%91%98%EF%BC%9A-1"><span class="nav-number">4.1.4.2.</span> <span class="nav-text">函数成员：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BF%A1%E5%8F%B7%EF%BC%9A"><span class="nav-number">4.1.4.3.</span> <span class="nav-text">信号：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A7%BD%EF%BC%9A-2"><span class="nav-number">4.1.4.4.</span> <span class="nav-text">槽：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#addstudent-window"><span class="nav-number">4.1.5.</span> <span class="nav-text">addstudent_window</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E6%88%90%E5%91%98%EF%BC%9A-2"><span class="nav-number">4.1.5.1.</span> <span class="nav-text">数据成员：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BF%A1%E5%8F%B7%EF%BC%9A-1"><span class="nav-number">4.1.5.2.</span> <span class="nav-text">信号：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A7%BD%EF%BC%9A-3"><span class="nav-number">4.1.5.3.</span> <span class="nav-text">槽：</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#student-window"><span class="nav-number">4.1.6.</span> <span class="nav-text">student_window</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%95%B0%E6%8D%AE%E6%88%90%E5%91%98%EF%BC%9A-3"><span class="nav-number">4.1.6.1.</span> <span class="nav-text">数据成员：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%87%BD%E6%95%B0%E6%88%90%E5%91%98%EF%BC%9A-2"><span class="nav-number">4.1.6.2.</span> <span class="nav-text">函数成员：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BF%A1%E5%8F%B7%EF%BC%9A-2"><span class="nav-number">4.1.6.3.</span> <span class="nav-text">信号：</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%A7%BD%EF%BC%9A-4"><span class="nav-number">4.1.6.4.</span> <span class="nav-text">槽：</span></a></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%85%B7%E4%BD%93%E5%AE%9E%E7%8E%B0"><span class="nav-number">5.</span> <span class="nav-text">具体实现</span></a></li></ol>
+    </div>
+</div>
+        </aside>
+    
+
+    <div class="image-viewer-container">
+    <img src="">
+</div>
+
+
+    
+        <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+          <span class="search-input-field-pre">
+            <i class="fas fa-keyboard"></i>
+          </span>
+            <div class="search-input-container">
+                <input autocomplete="off"
+                       autocorrect="off"
+                       autocapitalize="off"
+                       placeholder="Search..."
+                       spellcheck="false"
+                       type="search"
+                       class="search-input"
+                >
+            </div>
+            <span class="popup-btn-close">
+                <i class="fas fa-times"></i>
+            </span>
+        </div>
+        <div id="search-result">
+            <div id="no-result">
+                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
+            </div>
+        </div>
+    </div>
+</div>
+
+    
+
+</main>
+
+
+
+<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/dark-light-toggle.js"></script>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/local-search.js"></script>
+
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/code-copy.js"></script>
+
+
+
+
+<div class="post-scripts pjax">
+    
+        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/left-side-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/libs/anime.min.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/toc.js"></script>
+    
+</div>
+
+
+    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/libs/pjax.min.js"></script>
+<script>
+    window.addEventListener('DOMContentLoaded', () => {
+        window.pjax = new Pjax({
+            selectors: [
+                'head title',
+                '.page-container',
+                '.pjax'
+            ],
+            history: true,
+            debug: false,
+            cacheBust: false,
+            timeout: 0,
+            analytics: false,
+            currentUrlFullReload: false,
+            scrollRestoration: false,
+            // scrollTo: true,
+        });
+
+        document.addEventListener('pjax:send', () => {
+            KEEP.utils.pjaxProgressBarStart();
+        });
+
+        document.addEventListener('pjax:complete', () => {
+            KEEP.utils.pjaxProgressBarEnd();
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
+            KEEP.refresh();
+        });
+    });
+</script>
+
+
+
+</body>
+</html>
