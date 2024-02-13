@@ -1,13 +1,11 @@
 .tag-container .tag-name {
-  color: var(--second-text-color);
-  font-size: 1.6rem;
+  margin-bottom: var(--components-spacing);
+  color: var(--text-color-2);
+  font-weight: 600;
+  font-size: 1.5rem;
 keep-tablet()
 keep-mobile()
-  font-weight: 600;
-  padding-bottom: 20px;
-  margin-bottom: $component-spacing-value;
-  border-bottom: 1px solid var(--border-color);
 }
 .tag-container .tag-name i {
-  color: var(--second-text-color);
+  color: var(--text-color-2);
 }

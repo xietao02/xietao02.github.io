@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="keywords" content="Hexo Theme Keep">
     <meta name="description" content="Hexo Theme Keep">
-    <meta name="author" content="XieTao">
+    <meta name="author" content="xietao">
     
     <title>
         
@@ -16,15 +16,23 @@
     
 <link rel="stylesheet" href="/css/style.css">
 
-    <link rel="shortcut icon" href="/images/logo.svg">
-    <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/css/font-awesome.min.css">
-    <script id="hexo-configurations">
-    let KEEP = window.KEEP || {};
-    KEEP.hexo_config = {"hostname":"xietao.site","root":"/","language":"en","path":"search.json"};
-    KEEP.theme_config = {"toc":{"enable":true,"number":true,"expand_all":false,"init_open":true},"style":{"primary_color":"#CC0000","avatar":"/images/cat.JPG","favicon":"/images/logo.svg","article_img_align":"center","left_side_width":"260px","content_max_width":"930px","hover":{"shadow":true,"scale":true},"first_screen":{"enable":true,"background_img":"/images/bg.svg","description":"但行好事，莫问前程。"},"scroll":{"progress_bar":{"enable":true},"percent":{"enable":true}}},"local_search":{"enable":true,"preload":true},"code_copy":{"enable":true,"style":"mac"},"pjax":{"enable":true},"lazyload":{"enable":false},"version":"3.4.5"};
-    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"};
+    
+        <link rel="shortcut icon" href="/images/xingqiu.svg">
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.0.6/font/css/fontawesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.0.6/font/css/regular.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.0.6/font/css/solid.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.0.6/font/css/brands.min.css">
+    
+    <script class="keep-theme-configurations">
+    const KEEP = window.KEEP || {}
+    KEEP.hexo_config = {"hostname":"xietao.site","root":"/","language":"en","path":"search.json"}
+    KEEP.theme_config = {"base_info":{"primary_color":"#CC0000","title":"谢焘的个人站","author":"xietao","avatar":"/images/cat.jpg","logo":null,"favicon":"/images/xingqiu.svg"},"menu":{"Archives":"/archives","Categories":"/categories","About":"/about","Subspace":"/subspace"},"first_screen":{"enable":true,"background_img":"/images/bg.svg","background_img_dark":"/images/bg.svg","description":"但行好事，莫问前程。","hitokoto":false},"social_contact":{"enable":true,"links":{"github":"https://github.com/xietao02","weixin":null,"qq":null,"weibo":null,"zhihu":null,"twitter":null,"facebook":null,"email":"xietao02@outlook.com"}},"scroll":{"progress_bar":true,"percent":true,"hide_header":true},"home":{"category":true,"tag":true,"announcement":null},"post":{"author_badge":{"enable":false,"level_badge":true,"custom_badge":["One","Two","Three"]},"word_count":{"wordcount":true,"min2read":true},"datetime_format":"YYYY-MM-DD HH:mm","copyright_info":true,"share":false,"reward":{"enable":false,"img_link":null,"text":null}},"code_block":{"tools":{"enable":true,"style":"mac"},"highlight_theme":"default"},"toc":{"enable":true,"number":false,"expand_all":false,"init_open":true,"layout":"left"},"website_count":{"busuanzi_count":{"enable":false,"site_uv":false,"site_pv":true,"page_pv":true}},"local_search":{"enable":false,"preload":false},"comment":{"enable":false,"use":"valine","valine":{"appid":null,"appkey":null,"server_urls":null,"placeholder":null},"gitalk":{"github_id":null,"github_admins":null,"repository":null,"client_id":null,"client_secret":null,"proxy":null},"twikoo":{"env_id":null,"region":null,"version":"1.6.21"},"waline":{"server_url":null,"reaction":false,"version":2},"giscus":{"repo":null,"repo_id":null,"category":"Announcements","category_id":null,"reactions_enabled":false},"artalk":{"server":null},"disqus":{"shortname":null}},"rss":{"enable":false},"lazyload":{"enable":false},"cdn":{"enable":true,"provider":"cdnjs"},"pjax":{"enable":true},"footer":{"since":2021,"word_count":true,"icp":{"enable":true,"record_code":"赣ICP备2021009840号","url":"https://beian.miit.gov.cn"},"site_deploy":{"enable":false,"provider":"github","url":null},"shields_style":{"enable":false,"custom":[{"link_url":null,"img_url":null}]}},"inject":{"enable":false,"css":[null],"js":[null]},"root":"","version":"4.0.6"}
+    KEEP.language_ago = {"second":"%s seconds ago","minute":"%s minutes ago","hour":"%s hours ago","day":"%s days ago","week":"%s weeks ago","month":"%s months ago","year":"%s years ago"}
+    KEEP.language_code_block = {"copy":"Copy code","copied":"Copied","fold":"Fold code block","folded":"Folded"}
+    KEEP.language_copy_copyright = {"copy":"Copy copyright info","copied":"Copied","title":"Original post title","author":"Original post author","link":"Original post link"}
   </script>
-<meta name="generator" content="Hexo 5.4.2"></head>
+<meta name="generator" content="Hexo 7.1.1"></head>
 
 
 <body>
@@ -35,84 +43,67 @@
 
     
         <span class="pjax-progress-bar"></span>
-        <span class="pjax-progress-icon">
-            <i class="fas fa-circle-notch fa-spin"></i>
-        </span>
+        <i class="pjax-progress-icon fas fa-circle-notch fa-spin"></i>
     
 </div>
 
 
-<main class="page-container">
+<main class="page-container border-box">
 
+    <!-- home first screen  -->
     
 
-    <div class="page-main-content">
-
+    <!-- page content -->
+    <div class="page-main-content border-box">
         <div class="page-main-content-top">
-            <header class="header-wrapper">
-
-    <div class="header-content">
-        <div class="left">
             
-            <a class="logo-title" href="/">
-                谢焘的个人站
+<header class="header-wrapper">
+
+    <div class="border-box header-content">
+        <div class="left border-box">
+            
+            <a class="site-name border-box" href="/">
+               谢焘的个人站
             </a>
         </div>
 
-        <div class="right">
+        <div class="right border-box">
             <div class="pc">
                 <ul class="menu-list">
-                    
-                        <li class="menu-item">
-                            <a class=""
-                               href="/"
-                            >
-                                HOME
-                            </a>
-                        </li>
+                    <li class="menu-item">
+                        <a class=""
+                           href="/"
+                        >HOME</a>
+                    </li>
                     
                         <li class="menu-item">
                             <a class=""
                                href="/archives"
-                            >
-                                ARCHIVES
-                            </a>
+                            >ARCHIVES</a>
                         </li>
                     
                         <li class="menu-item">
                             <a class=""
                                href="/categories"
-                            >
-                                CATEGORIES
-                            </a>
+                            >CATEGORIES</a>
                         </li>
                     
                         <li class="menu-item">
                             <a class=""
                                href="/about"
-                            >
-                                ABOUT
-                            </a>
+                            >ABOUT</a>
                         </li>
                     
                         <li class="menu-item">
                             <a class=""
                                href="/subspace"
-                            >
-                                SUBSPACE
-                            </a>
+                            >SUBSPACE</a>
                         </li>
                     
-                    
-                        <li class="menu-item search search-popup-trigger">
-                            <i class="fas fa-search"></i>
-                        </li>
                     
                 </ul>
             </div>
             <div class="mobile">
-                
-                    <div class="icon-item search search-popup-trigger"><i class="fas fa-search"></i></div>
                 
                 <div class="icon-item menu-bar">
                     <div class="menu-bar-middle"></div>
@@ -123,30 +114,34 @@
 
     <div class="header-drawer">
         <ul class="drawer-menu-list">
+            <li class="drawer-menu-item flex-center">
+                <a class=""
+                   href="/"
+                >HOME</a>
+            </li>
             
                 <li class="drawer-menu-item flex-center">
                     <a class=""
-                       href="/">HOME</a>
+                       href="/archives"
+                    >ARCHIVES</a>
                 </li>
             
                 <li class="drawer-menu-item flex-center">
                     <a class=""
-                       href="/archives">ARCHIVES</a>
+                       href="/categories"
+                    >CATEGORIES</a>
                 </li>
             
                 <li class="drawer-menu-item flex-center">
                     <a class=""
-                       href="/categories">CATEGORIES</a>
+                       href="/about"
+                    >ABOUT</a>
                 </li>
             
                 <li class="drawer-menu-item flex-center">
                     <a class=""
-                       href="/about">ABOUT</a>
-                </li>
-            
-                <li class="drawer-menu-item flex-center">
-                    <a class=""
-                       href="/subspace">SUBSPACE</a>
+                       href="/subspace"
+                    >SUBSPACE</a>
                 </li>
             
         </ul>
@@ -159,85 +154,104 @@
 
         </div>
 
-        <div class="page-main-content-middle">
+        <div class="page-main-content-middle border-box">
 
-            <div class="main-content">
+            <div class="main-content border-box">
+                
+
+                    
+<div class="fade-in-down-animation">
+    <div class="post-page-container border-box">
+        <div class="post-content-container border-box">
+            
+
+            <div class="post-content-bottom border-box">
+                
+                    <div class="post-title">
+                        鸢尾花分类的随机森林实现及结果可视化
+                    </div>
+                
 
                 
-                    <div class="fade-in-down-animation">
-    <div class="article-content-container">
+                    <div class="post-header border-box">
+                        
+                            <div class="avatar-box border-box">
+                                <img src="/images/cat.jpg">
+                            </div>
+                        
+                        <div class="info-box">
+                            <div class="author border-box">
+                                <span class="name">xietao</span>
+                                
+                            </div>
+                            <div class="meta-info border-box">
+                                
 
-        <div class="article-title">
-            <span class="title-hover-animation">鸢尾花分类的随机森林实现及结果可视化</span>
-        </div>
+<div class="post-meta-info-container border-box post">
+    <div class="post-meta-info border-box">
+        
 
         
-            <div class="article-header">
-                <div class="avatar">
-                    <img src="/images/cat.JPG">
-                </div>
-                <div class="info">
-                    <div class="author">
-                        <span class="name">XieTao</span>
-                        
-                    </div>
-                    <div class="meta-info">
-                        <div class="article-meta-info">
-    <span class="article-date article-meta-item">
-        <i class="fas fa-edit"></i>&nbsp;
-        <span class="pc">2022-05-01 16:00:35</span>
-        <span class="mobile">2022-05-01 16:00</span>
-    </span>
-    
-        <span class="article-categories article-meta-item">
-            <i class="fas fa-folder"></i>&nbsp;
-            <ul>
-                
-                    <li>
-                        <a href="/categories/notes/">notes</a>&nbsp;
-                    </li>
-                
-            </ul>
-        </span>
-    
-    
-        <span class="article-tags article-meta-item">
-            <i class="fas fa-tags"></i>&nbsp;
-            <ul>
-                
-                    <li>
-                        <a href="/tags/random-forest/">random forest</a>&nbsp;
-                    </li>
-                
-            </ul>
-        </span>
-    
+            <span class="meta-info-item post-create-date">
+                <i class="icon fa-solid fa-calendar-plus"></i>&nbsp;
+                <span class="datetime">2022-05-01 16:00</span>
+            </span>
 
-    
-    
-        <span class="article-wordcount article-meta-item">
-            <i class="fas fa-file-word"></i>&nbsp;<span>2.8k Words</span>
-        </span>
-    
-    
-        <span class="article-min2read article-meta-item">
-            <i class="fas fa-clock"></i>&nbsp;<span>13 Mins</span>
-        </span>
-    
-    
-        <span class="article-pv article-meta-item">
-            <i class="fas fa-eye"></i>&nbsp;<span id="busuanzi_value_page_pv"></span>
-        </span>
+            <span class="meta-info-item post-update-date">
+                <i class="icon fa-solid fa-file-pen"></i>&nbsp;
+                <span class="datetime" data-updated="Mon May 02 2022 15:38:37 GMT+0800">2022-05-02 15:38</span>
+            </span>
+        
+
+        
+            <span class="meta-info-item post-category border-box"><i class="icon fas fa-folder"></i>&nbsp;
+                <ul class="post-category-ul">
+                    
+                            <li class="category-item"><a href="/categories/notes/">notes</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+            <span class="post-tag meta-info-item border-box">
+                <i class="icon fas fa-tags"></i>&nbsp;
+                <ul class="post-tag-ul">
+                    
+                            <li class="tag-item"><span class="tag-separator"><i class="icon fas fa-hashtag"></i></span><a href="/tags/random-forest/">random forest</a></li>
+                        
+                    
+                </ul>
+            </span>
+        
+
+        
+        
+            <span class="meta-info-item post-wordcount">
+                <i class="icon fas fa-file-word"></i>&nbsp;<span>2.8k Words</span>
+            </span>
+        
+        
+            <span class="meta-info-item post-min2read">
+                <i class="icon fas fa-clock"></i>&nbsp;<span>13 Mins</span>
+            </span>
+        
+        
+    </div>
+
     
 </div>
 
+                            </div>
+                        </div>
                     </div>
-                </div>
-            </div>
-        
+                
 
-        <div class="article-content markdown-body">
-            <p>基于scikit-learn的鸢尾花分类及结果可视化教程（随机森林实现）。</p>
+                <div class="post-content keep-markdown-body">
+                    
+
+                    <p>基于scikit-learn的鸢尾花分类及结果可视化教程（随机森林实现）。</p>
 <span id="more"></span>
 
 <h1 id="随机森林概述"><a href="#随机森林概述" class="headerlink" title="随机森林概述"></a>随机森林概述</h1><p>随机森林主要应用于回归和分类两种场景，<strong>又侧重于分类</strong>。</p>
@@ -279,7 +293,7 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">cmap_bold = ListedColormap([<span class="string">&#x27;#FF0000&#x27;</span>, <span class="string">&#x27;#00FF00&#x27;</span>, <span class="string">&#x27;#0000FF&#x27;</span>])</span><br><span class="line">plt.figure()</span><br><span class="line">plt.scatter(x[:, <span class="number">0</span>], x[:, <span class="number">1</span>], c=y, cmap=cmap_bold, edgecolors=<span class="string">&#x27;k&#x27;</span>, s=<span class="number">20</span>)</span><br><span class="line">plt.title(<span class="string">&#x27;RandomForestClassifier&#x27;</span>)</span><br><span class="line">plt.show()</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;RandomForestClassifier score:&#x27;</span>, RF.score(x, y))</span><br></pre></td></tr></table></figure>
 
 <p>输出如下</p>
-<img src="sklearn_RF/image1.png" alt="image1" style="zoom:50%;" />
+<img     src="sklearn_RF/image1.png"   alt="image1" style="zoom:50%;" >
 
 <h2 id="画出特征组合的决策边界"><a href="#画出特征组合的决策边界" class="headerlink" title="画出特征组合的决策边界"></a>画出特征组合的决策边界</h2><p>为了进一步了解特征与类别的关系，还可以画出特征组合的决策边界。</p>
 <p>首先在一个区域里生成大量的坐标点。这需要使用 np.meshgrid() 函数。给定两个 array，比如 x=[1,2,3] 和 y=[4,5]，np.meshgrid(x,y) 会输出两个矩阵。</p>
@@ -304,12 +318,12 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">cmap_light = ListedColormap([<span class="string">&#x27;#FFAAAA&#x27;</span>, <span class="string">&#x27;#AAFFAA&#x27;</span>, <span class="string">&#x27;#AAAAFF&#x27;</span>])</span><br><span class="line">plt.figure()</span><br><span class="line">plt.pcolormesh(xx, yy, z, cmap=cmap_light)</span><br><span class="line">plt.xlim(x[:, <span class="number">0</span>].<span class="built_in">min</span>() - <span class="number">0.5</span>, x[:, <span class="number">0</span>].<span class="built_in">max</span>() + <span class="number">0.5</span>)</span><br><span class="line">plt.ylim(x[:, <span class="number">1</span>].<span class="built_in">min</span>() - <span class="number">0.5</span>, x[:, <span class="number">1</span>].<span class="built_in">max</span>() + <span class="number">0.5</span>)</span><br></pre></td></tr></table></figure>
 
 <p>输出如下</p>
-<img src="sklearn_RF/image2.png" alt="image2" style="zoom:50%;" />
+<img     src="sklearn_RF/image2.png"   alt="image2" style="zoom:50%;" >
 
 <h2 id="完整源代码"><a href="#完整源代码" class="headerlink" title="完整源代码"></a><span id="destination">完整源代码</span></h2><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># coding: utf-8</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">from</span> matplotlib.colors <span class="keyword">import</span> ListedColormap</span><br><span class="line"><span class="keyword">from</span> sklearn.ensemble <span class="keyword">import</span> RandomForestClassifier</span><br><span class="line"><span class="keyword">from</span> sklearn.ensemble <span class="keyword">import</span> ExtraTreesClassifier</span><br><span class="line"><span class="keyword">from</span> sklearn.datasets <span class="keyword">import</span> load_iris</span><br><span class="line"></span><br><span class="line">RF = RandomForestClassifier(n_jobs=<span class="number">4</span>)</span><br><span class="line">iris = load_iris()</span><br><span class="line">x = iris.data[:, :<span class="number">2</span>]</span><br><span class="line">y = iris.target</span><br><span class="line">RF.fit(x, y)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">x_min, x_max = x[:, <span class="number">0</span>].<span class="built_in">min</span>() - <span class="number">1</span>, x[:, <span class="number">0</span>].<span class="built_in">max</span>() + <span class="number">1</span></span><br><span class="line">y_min, y_max = x[:, <span class="number">1</span>].<span class="built_in">min</span>() - <span class="number">1</span>, x[:, <span class="number">1</span>].<span class="built_in">max</span>() + <span class="number">1</span></span><br><span class="line">h = <span class="number">.02</span></span><br><span class="line"></span><br><span class="line">cmap_bold = ListedColormap([<span class="string">&#x27;#FF0000&#x27;</span>, <span class="string">&#x27;#00FF00&#x27;</span>, <span class="string">&#x27;#0000FF&#x27;</span>])</span><br><span class="line">cmap_light = ListedColormap([<span class="string">&#x27;#FFAAAA&#x27;</span>, <span class="string">&#x27;#AAFFAA&#x27;</span>, <span class="string">&#x27;#AAAAFF&#x27;</span>])</span><br><span class="line"></span><br><span class="line">xx, yy = np.meshgrid(</span><br><span class="line">    np.arange(x_min, x_max, h),</span><br><span class="line">    np.arange(y_min, y_max, h)</span><br><span class="line">)</span><br><span class="line">z = RF.predict(np.c_[xx.ravel(), yy.ravel()])</span><br><span class="line">z = z.reshape(xx.shape)</span><br><span class="line">plt.figure()</span><br><span class="line">plt.pcolormesh(xx, yy, z, cmap=cmap_light)</span><br><span class="line">plt.scatter(x[:, <span class="number">0</span>], x[:, <span class="number">1</span>], c=y, cmap=cmap_bold, edgecolors=<span class="string">&#x27;k&#x27;</span>, s=<span class="number">20</span>)</span><br><span class="line">plt.xlim(x[:, <span class="number">0</span>].<span class="built_in">min</span>() - <span class="number">0.5</span>, x[:, <span class="number">0</span>].<span class="built_in">max</span>() + <span class="number">0.5</span>)</span><br><span class="line">plt.ylim(x[:, <span class="number">1</span>].<span class="built_in">min</span>() - <span class="number">0.5</span>, x[:, <span class="number">1</span>].<span class="built_in">max</span>() + <span class="number">0.5</span>)</span><br><span class="line">plt.title(<span class="string">&#x27;RandomForestClassifier&#x27;</span>)</span><br><span class="line">plt.show()</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;RandomForestClassifier score:&#x27;</span>, RF.score(x, y))</span><br></pre></td></tr></table></figure>
 
 <p> 输出结果如下</p>
-<img src="sklearn_RF/image3.png" alt="image3" style="zoom:50%;" />
+<img     src="sklearn_RF/image3.png"   alt="image3" style="zoom:50%;" >
 
 <h1 id="分类包含四个特征的数据集，并画出所有特征组合的决策边界"><a href="#分类包含四个特征的数据集，并画出所有特征组合的决策边界" class="headerlink" title="分类包含四个特征的数据集，并画出所有特征组合的决策边界"></a>分类包含四个特征的数据集，并画出所有特征组合的决策边界</h1><p>因为鸢尾花数据集中只有4个特征，所以只需要将 x = iris.data[:, :2] 改为 x = iris.data[:, :]，即可构建具有四个特征的随机森林。</p>
 <p>同时因为可视化更适用于 1～3 维度的数据，所以此处取两个特征为一组，共六组特征组合。</p>
@@ -317,62 +331,128 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># coding: utf-8</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span>  numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">from</span> matplotlib.colors <span class="keyword">import</span> ListedColormap</span><br><span class="line"><span class="keyword">from</span> sklearn.ensemble <span class="keyword">import</span> RandomForestClassifier</span><br><span class="line"><span class="keyword">from</span> sklearn.ensemble <span class="keyword">import</span> ExtraTreesClassifier</span><br><span class="line"><span class="keyword">from</span> sklearn.datasets <span class="keyword">import</span> load_iris</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">iris = load_iris()</span><br><span class="line">x = iris.data[:, :]</span><br><span class="line">x_01 = x[:, :<span class="number">2</span>]</span><br><span class="line">x_02 = np.c_[x[:, <span class="number">0</span>], x[:, <span class="number">2</span>]]</span><br><span class="line">x_03 = np.c_[x[:, <span class="number">0</span>], x[:, <span class="number">3</span>]]</span><br><span class="line">x_12 = np.c_[x[:, <span class="number">1</span>], x[:, <span class="number">2</span>]]</span><br><span class="line">x_13 = np.c_[x[:, <span class="number">1</span>], x[:, <span class="number">3</span>]]</span><br><span class="line">x_23 = np.c_[x[:, <span class="number">2</span>], x[:, <span class="number">3</span>]]</span><br><span class="line">y = iris.target</span><br><span class="line"></span><br><span class="line">RF_all = RandomForestClassifier(n_jobs=<span class="number">4</span>)</span><br><span class="line">RF_01 = RandomForestClassifier(n_jobs=<span class="number">4</span>)</span><br><span class="line">RF_02 = RandomForestClassifier(n_jobs=<span class="number">4</span>)</span><br><span class="line">RF_03 = RandomForestClassifier(n_jobs=<span class="number">4</span>)</span><br><span class="line">RF_12 = RandomForestClassifier(n_jobs=<span class="number">4</span>)</span><br><span class="line">RF_13 = RandomForestClassifier(n_jobs=<span class="number">4</span>)</span><br><span class="line">RF_23 = RandomForestClassifier(n_jobs=<span class="number">4</span>)</span><br><span class="line"></span><br><span class="line">RF_all.fit(x, y)</span><br><span class="line">RF_01.fit(x_01, y)</span><br><span class="line">RF_02.fit(x_02, y)</span><br><span class="line">RF_03.fit(x_03, y)</span><br><span class="line">RF_12.fit(x_12, y)</span><br><span class="line">RF_13.fit(x_13, y)</span><br><span class="line">RF_23.fit(x_23, y)</span><br><span class="line"></span><br><span class="line">x0_min, x0_max = x[:, <span class="number">0</span>].<span class="built_in">min</span>() - <span class="number">1</span>, x[:, <span class="number">0</span>].<span class="built_in">max</span>() + <span class="number">1</span></span><br><span class="line">x1_min, x1_max = x[:, <span class="number">1</span>].<span class="built_in">min</span>() - <span class="number">1</span>, x[:, <span class="number">1</span>].<span class="built_in">max</span>() + <span class="number">1</span></span><br><span class="line">x2_min, x2_max = x[:, <span class="number">2</span>].<span class="built_in">min</span>() - <span class="number">1</span>, x[:, <span class="number">2</span>].<span class="built_in">max</span>() + <span class="number">1</span></span><br><span class="line">x3_min, x3_max = x[:, <span class="number">3</span>].<span class="built_in">min</span>() - <span class="number">1</span>, x[:, <span class="number">3</span>].<span class="built_in">max</span>() + <span class="number">1</span></span><br><span class="line"></span><br><span class="line">h = <span class="number">.02</span></span><br><span class="line"></span><br><span class="line">xx_01, yy_01 = np.meshgrid(</span><br><span class="line">    np.arange(x0_min, x0_max, h),</span><br><span class="line">    np.arange(x1_min, x1_max, h)</span><br><span class="line">)</span><br><span class="line">xx_02, yy_02 = np.meshgrid(</span><br><span class="line">    np.arange(x0_min, x0_max, h),</span><br><span class="line">    np.arange(x2_min, x2_max, h)</span><br><span class="line">)</span><br><span class="line">xx_03, yy_03 = np.meshgrid(</span><br><span class="line">    np.arange(x0_min, x0_max, h),</span><br><span class="line">    np.arange(x3_min, x3_max, h)</span><br><span class="line">)</span><br><span class="line">xx_12, yy_12 = np.meshgrid(</span><br><span class="line">    np.arange(x1_min, x1_max, h),</span><br><span class="line">    np.arange(x2_min, x2_max, h)</span><br><span class="line">)</span><br><span class="line">xx_13, yy_13 = np.meshgrid(</span><br><span class="line">    np.arange(x1_min, x1_max, h),</span><br><span class="line">    np.arange(x3_min, x3_max, h)</span><br><span class="line">)</span><br><span class="line">xx_23, yy_23 = np.meshgrid(</span><br><span class="line">    np.arange(x2_min, x2_max, h),</span><br><span class="line">    np.arange(x3_min, x3_max, h)</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">z_01 = RF_01.predict(np.c_[xx_01.ravel(), yy_01.ravel()])</span><br><span class="line">z_01 = z_01.reshape(xx_01.shape)</span><br><span class="line">z_02 = RF_02.predict(np.c_[xx_02.ravel(), yy_02.ravel()])</span><br><span class="line">z_02 = z_02.reshape(xx_02.shape)</span><br><span class="line">z_03 = RF_03.predict(np.c_[xx_03.ravel(), yy_03.ravel()])</span><br><span class="line">z_03 = z_03.reshape(xx_03.shape)</span><br><span class="line">z_12 = RF_12.predict(np.c_[xx_12.ravel(), yy_12.ravel()])</span><br><span class="line">z_12 = z_12.reshape(xx_12.shape)</span><br><span class="line">z_13 = RF_13.predict(np.c_[xx_13.ravel(), yy_13.ravel()])</span><br><span class="line">z_13 = z_13.reshape(xx_13.shape)</span><br><span class="line">z_23 = RF_23.predict(np.c_[xx_23.ravel(), yy_23.ravel()])</span><br><span class="line">z_23 = z_23.reshape(xx_23.shape)</span><br><span class="line"></span><br><span class="line">cmap_bold = ListedColormap([<span class="string">&#x27;#FF0000&#x27;</span>, <span class="string">&#x27;#00FF00&#x27;</span>, <span class="string">&#x27;#0000FF&#x27;</span>])</span><br><span class="line">cmap_light = ListedColormap([<span class="string">&#x27;#FFAAAA&#x27;</span>, <span class="string">&#x27;#AAFFAA&#x27;</span>, <span class="string">&#x27;#AAAAFF&#x27;</span>])</span><br><span class="line"></span><br><span class="line">plt.subplot(<span class="number">2</span>, <span class="number">3</span>, <span class="number">1</span>)</span><br><span class="line">plt.pcolormesh(xx_01, yy_01, z_01, cmap=cmap_light)</span><br><span class="line">plt.scatter(x[:, <span class="number">0</span>], x[:, <span class="number">1</span>], c=y, cmap=cmap_bold, edgecolors=<span class="string">&#x27;k&#x27;</span>, s=<span class="number">20</span>)</span><br><span class="line">plt.xlim(x[:, <span class="number">0</span>].<span class="built_in">min</span>() - <span class="number">0.5</span>, x[:, <span class="number">0</span>].<span class="built_in">max</span>() + <span class="number">0.5</span>)</span><br><span class="line">plt.ylim(x[:, <span class="number">1</span>].<span class="built_in">min</span>() - <span class="number">0.5</span>, x[:, <span class="number">1</span>].<span class="built_in">max</span>() + <span class="number">0.5</span>)</span><br><span class="line">plt.title(<span class="string">&#x27;feature 0 &amp; 1&#x27;</span>)</span><br><span class="line"></span><br><span class="line">plt.subplot(<span class="number">2</span>, <span class="number">3</span>, <span class="number">2</span>)</span><br><span class="line">plt.pcolormesh(xx_02, yy_02, z_02, cmap=cmap_light)</span><br><span class="line">plt.scatter(x[:, <span class="number">0</span>], x[:, <span class="number">2</span>], c=y, cmap=cmap_bold, edgecolors=<span class="string">&#x27;k&#x27;</span>, s=<span class="number">20</span>)</span><br><span class="line">plt.xlim(x[:, <span class="number">0</span>].<span class="built_in">min</span>() - <span class="number">0.5</span>, x[:, <span class="number">0</span>].<span class="built_in">max</span>() + <span class="number">0.5</span>)</span><br><span class="line">plt.ylim(x[:, <span class="number">2</span>].<span class="built_in">min</span>() - <span class="number">0.5</span>, x[:, <span class="number">2</span>].<span class="built_in">max</span>() + <span class="number">0.5</span>)</span><br><span class="line">plt.title(<span class="string">&#x27;feature 0 &amp; 2&#x27;</span>)</span><br><span class="line"></span><br><span class="line">plt.subplot(<span class="number">2</span>, <span class="number">3</span>, <span class="number">3</span>)</span><br><span class="line">plt.pcolormesh(xx_03, yy_03, z_03, cmap=cmap_light)</span><br><span class="line">plt.scatter(x[:, <span class="number">0</span>], x[:, <span class="number">3</span>], c=y, cmap=cmap_bold, edgecolors=<span class="string">&#x27;k&#x27;</span>, s=<span class="number">20</span>)</span><br><span class="line">plt.xlim(x[:, <span class="number">0</span>].<span class="built_in">min</span>() - <span class="number">0.5</span>, x[:, <span class="number">0</span>].<span class="built_in">max</span>() + <span class="number">0.5</span>)</span><br><span class="line">plt.ylim(x[:, <span class="number">3</span>].<span class="built_in">min</span>() - <span class="number">0.5</span>, x[:, <span class="number">3</span>].<span class="built_in">max</span>() + <span class="number">0.5</span>)</span><br><span class="line">plt.title(<span class="string">&#x27;feature 0 &amp; 3&#x27;</span>)</span><br><span class="line"></span><br><span class="line">plt.subplot(<span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>)</span><br><span class="line">plt.pcolormesh(xx_12, yy_12, z_12, cmap=cmap_light)</span><br><span class="line">plt.scatter(x[:, <span class="number">1</span>], x[:, <span class="number">2</span>], c=y, cmap=cmap_bold, edgecolors=<span class="string">&#x27;k&#x27;</span>, s=<span class="number">20</span>)</span><br><span class="line">plt.xlim(x[:, <span class="number">1</span>].<span class="built_in">min</span>() - <span class="number">0.5</span>, x[:, <span class="number">1</span>].<span class="built_in">max</span>() + <span class="number">0.5</span>)</span><br><span class="line">plt.ylim(x[:, <span class="number">2</span>].<span class="built_in">min</span>() - <span class="number">0.5</span>, x[:, <span class="number">2</span>].<span class="built_in">max</span>() + <span class="number">0.5</span>)</span><br><span class="line">plt.title(<span class="string">&#x27;feature 1 &amp; 2&#x27;</span>)</span><br><span class="line"></span><br><span class="line">plt.subplot(<span class="number">2</span>, <span class="number">3</span>, <span class="number">5</span>)</span><br><span class="line">plt.pcolormesh(xx_13, yy_13, z_13, cmap=cmap_light)</span><br><span class="line">plt.scatter(x[:, <span class="number">1</span>], x[:, <span class="number">3</span>], c=y, cmap=cmap_bold, edgecolors=<span class="string">&#x27;k&#x27;</span>, s=<span class="number">20</span>)</span><br><span class="line">plt.xlim(x[:, <span class="number">1</span>].<span class="built_in">min</span>() - <span class="number">0.5</span>, x[:, <span class="number">1</span>].<span class="built_in">max</span>() + <span class="number">0.5</span>)</span><br><span class="line">plt.ylim(x[:, <span class="number">3</span>].<span class="built_in">min</span>() - <span class="number">0.5</span>, x[:, <span class="number">3</span>].<span class="built_in">max</span>() + <span class="number">0.5</span>)</span><br><span class="line">plt.title(<span class="string">&#x27;feature 1 &amp; 3&#x27;</span>)</span><br><span class="line"></span><br><span class="line">plt.subplot(<span class="number">2</span>, <span class="number">3</span>, <span class="number">6</span>)</span><br><span class="line">plt.pcolormesh(xx_23, yy_23, z_23, cmap=cmap_light)</span><br><span class="line">plt.scatter(x[:, <span class="number">2</span>], x[:, <span class="number">3</span>], c=y, cmap=cmap_bold, edgecolors=<span class="string">&#x27;k&#x27;</span>, s=<span class="number">20</span>)</span><br><span class="line">plt.xlim(x[:, <span class="number">2</span>].<span class="built_in">min</span>() - <span class="number">0.5</span>, x[:, <span class="number">2</span>].<span class="built_in">max</span>() + <span class="number">0.5</span>)</span><br><span class="line">plt.ylim(x[:, <span class="number">3</span>].<span class="built_in">min</span>() - <span class="number">0.5</span>, x[:, <span class="number">3</span>].<span class="built_in">max</span>() + <span class="number">0.5</span>)</span><br><span class="line">plt.title(<span class="string">&#x27;feature 2 &amp; 3&#x27;</span>)</span><br><span class="line"></span><br><span class="line">plt.tight_layout()</span><br><span class="line">plt.show()</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;RF_all score:&#x27;</span>, RF_all.score(x, y))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;RF_01 score:&#x27;</span>, RF_01.score(x_01, y))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;RF_02 score:&#x27;</span>, RF_02.score(x_02, y))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;RF_03 score:&#x27;</span>, RF_03.score(x_03, y))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;RF_12 score:&#x27;</span>, RF_12.score(x_12, y))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;RF_13 score:&#x27;</span>, RF_13.score(x_13, y))</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&#x27;RF_23 score:&#x27;</span>, RF_23.score(x_23, y))</span><br></pre></td></tr></table></figure>
 
 <p>输出结果如下</p>
-<img src="sklearn_RF/image4.png" alt="image4" style="zoom:50%;" />
+<img     src="sklearn_RF/image4.png"   alt="image4" style="zoom:50%;" >
 
 
+                </div>
+
+                
+                        
+<div class="post-copyright-info-container border-box">
+    <div class="copyright-info-content border-box">
+        <div class="copyright-info-top border-box">
+            <div class="copyright-post-title border-box text-ellipsis">
+                鸢尾花分类的随机森林实现及结果可视化
+            </div>
+
+            <div class="copyright-post-link border-box text-ellipsis">
+                sklearn_RF.html
+            </div>
+        </div>
+
+        <div class="copyright-info-bottom border-box">
+            <div class="copyright-post-author bottom-item">
+                <div class="type">
+                    Author
+                </div>
+                <div class="content">xietao</div>
+            </div>
+
+            <div class="post-time bottom-item">
+                <div class="type">
+                    Published
+                </div>
+                <div class="content">2022-05-01 16:00</div>
+            </div>
+
+
+            <div class="post-license bottom-item">
+                <div class="type">
+                    License
+                </div>
+                <div class="content tooltip" data-tooltip-content="CC BY-NC-SA 4.0">
+                    <a target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed">
+                        <i class="fa-brands fa-creative-commons"></i>
+                        <i class="fa-brands fa-creative-commons-by"></i>
+                        <i class="fa-brands fa-creative-commons-nc"></i>
+                        <i class="fa-brands fa-creative-commons-sa"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <i class="copyright-bg fa-solid fa-copyright"></i>
+    </div>
+    <div class="copy-copyright-info flex-center tooltip" data-tooltip-content="Copy copyright info" data-tooltip-offset-y="-2px">
+        <i class="fa-solid fa-copy"></i>
+    </div>
+</div>
+
+                
+
+                <div class="post-bottom-tags-and-share border-box">
+                    <div>
+                        
+                            <ul class="post-tags-box border-box">
+                                
+                                    <li class="tag-item border-box">
+                                        <i class="icon fas fa-hashtag"></i>&nbsp;<a href="/tags/random-forest/">random forest</a>
+                                    </li>
+                                
+                            </ul>
+                        
+                    </div>
+                    <div>
+                        
+                    </div>
+                </div>
+
+                
+
+                
+                    <div class="post-nav border-box">
+                        
+                        
+                            <div class="next-post">
+                                <a class="next"
+                                   rel="next"
+                                   href="/StuInfoManageSys"
+                                   title="基于QT的学生信息管理系统"
+                                >
+                                    <span class="title flex-center">
+                                        <span class="post-nav-title-item text-ellipsis">基于QT的学生信息管理系统</span>
+                                        <span class="post-nav-item">Next posts</span>
+                                    </span>
+                                    <span class="right arrow-icon flex-center">
+                                        <i class="fas fa-chevron-right"></i>
+                                    </span>
+                                </a>
+                            </div>
+                        
+                    </div>
+                
+
+                
+                    
+
+
+
+
+
+
+                
+            </div>
         </div>
 
         
-            <div class="post-copyright-info">
-                <div class="article-copyright-info-container">
-    <ul>
-        <li>Post title：鸢尾花分类的随机森林实现及结果可视化</li>
-        <li>Post author：XieTao</li>
-        <li>Create time：2022-05-01 16:00:35</li>
-        <li>
-            Post link：https://xietao.site/sklearn_RF.html
-        </li>
-        <li>
-            Copyright Notice：All articles in this blog are licensed under <a class="license" target="_blank" rel="noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">BY-NC-SA</a> unless stating additionally.
-        </li>
-    </ul>
+            <div class="pc-post-toc left-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%9A%8F%E6%9C%BA%E6%A3%AE%E6%9E%97%E6%A6%82%E8%BF%B0"><span class="nav-text">随机森林概述</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9A%8F%E6%9C%BA%E6%A3%AE%E6%9E%97%E7%9A%84%E6%9E%84%E5%BB%BA%EF%BC%9A"><span class="nav-text">随机森林的构建：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%84%E6%B5%8B%E7%BB%93%E6%9E%9C%EF%BC%9A"><span class="nav-text">预测结果：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%88%86%E7%B1%BB%E5%8C%85%E5%90%AB%E4%B8%A4%E4%B8%AA%E7%89%B9%E5%BE%81%E7%9A%84%E6%95%B0%E6%8D%AE%E9%9B%86"><span class="nav-text">分类包含两个特征的数据集</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%BC%E5%85%A5%E6%A8%A1%E5%9D%97%E3%80%81%E5%87%BD%E6%95%B0"><span class="nav-text">导入模块、函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9E%84%E5%BB%BA%E9%9A%8F%E6%9C%BA%E6%A3%AE%E6%9E%97"><span class="nav-text">构建随机森林</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BE%93%E5%87%BA%E5%8F%AF%E8%A7%86%E5%8C%96%E7%BB%93%E6%9E%9C"><span class="nav-text">输出可视化结果</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%BB%E5%87%BA%E7%89%B9%E5%BE%81%E7%BB%84%E5%90%88%E7%9A%84%E5%86%B3%E7%AD%96%E8%BE%B9%E7%95%8C"><span class="nav-text">画出特征组合的决策边界</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%8C%E6%95%B4%E6%BA%90%E4%BB%A3%E7%A0%81"><span class="nav-text">完整源代码</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%88%86%E7%B1%BB%E5%8C%85%E5%90%AB%E5%9B%9B%E4%B8%AA%E7%89%B9%E5%BE%81%E7%9A%84%E6%95%B0%E6%8D%AE%E9%9B%86%EF%BC%8C%E5%B9%B6%E7%94%BB%E5%87%BA%E6%89%80%E6%9C%89%E7%89%B9%E5%BE%81%E7%BB%84%E5%90%88%E7%9A%84%E5%86%B3%E7%AD%96%E8%BE%B9%E7%95%8C"><span class="nav-text">分类包含四个特征的数据集，并画出所有特征组合的决策边界</span></a></li></ol>
+    </div>
 </div>
 
             </div>
-        
-
-        
-            <ul class="post-tags-box">
-                
-                    <li class="tag-item">
-                        <a href="/tags/random-forest/">#random forest</a>&nbsp;
-                    </li>
-                
-            </ul>
-        
-
-        
-            <div class="article-nav">
-                
-                
-                    <div class="article-next">
-                        <a class="next"
-                           rel="next"
-                           href="/StuInfoManageSys"
-                        >
-                            <span class="title flex-center">
-                                <span class="post-nav-title-item">基于QT的学生信息管理系统</span>
-                                <span class="post-nav-item">Next posts</span>
-                            </span>
-                            <span class="right arrow-icon flex-center">
-                              <i class="fas fa-chevron-right"></i>
-                            </span>
-                        </a>
-                    </div>
-                
-            </div>
-        
-
         
     </div>
 </div>
@@ -383,53 +463,67 @@
 
         </div>
 
-        <div class="page-main-content-bottom">
-            <footer class="footer">
-    <div class="info-container">
-        <div class="copyright-info info-item">
-            &copy;
+        <div class="page-main-content-bottom border-box">
             
-              <span>2021</span>
-              -
-            
-            2024&nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;<a href="/">XieTao</a>
-        </div>
+<footer class="footer border-box">
+    <div class="border-box website-info-box default">
         
-            <script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-            <div class="website-count info-item">
+            <div class="copyright-info info-item default">
+                &copy;&nbsp;<span>2021</span>&nbsp;-&nbsp;2024
                 
-                
-                    <span id="busuanzi_container_site_pv">
-                        Totalview&nbsp;<span id="busuanzi_value_site_pv"></span>
-                    </span>
+                    &nbsp;<i class="fas fa-heart icon-animate"></i>&nbsp;&nbsp;<a href="/">xietao</a>
                 
             </div>
+
+            <div class="theme-info info-item default">
+                Powered by&nbsp;<a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;&&nbsp;Theme&nbsp;<a class="keep-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep</a>
+            </div>
+
+            
+                <div class="icp-info info-item default">
+                    <a class=""
+                       target="_blank"
+                       href="https://beian.miit.gov.cn"
+                    >
+                        赣ICP备2021009840号
+                    </a>
+                </div>
+            
+
+            
         
-        <div class="theme-info info-item">
-            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>&nbsp;|&nbsp;Theme&nbsp;<a class="theme-version" target="_blank" href="https://github.com/XPoet/hexo-theme-keep">Keep v3.4.5</a>
+
+        <div class="count-item info-item default">
+            
+                <span class="count-box border-box word">
+                    <span class="item-type border-box">Total words</span>
+                    <span class="item-value border-box word">18.3k</span>
+                </span>
+            
+
+            
+
+            
         </div>
-        
-            <div class="icp-info info-item"><a target="_blank" rel="nofollow" href="https://beian.miit.gov.cn">赣ICP备2021009840号</a></div>
-        
-        
     </div>
 </footer>
 
         </div>
     </div>
 
+    <!-- post tools -->
     
-        <div class="post-tools">
-            <div class="post-tools-container">
-    <ul class="tools-list">
-        <!-- TOC aside toggle -->
+        <div class="post-tools left-toc">
+            <div class="post-tools-container border-box">
+    <ul class="tools-list border-box">
+        <!-- PC TOC show toggle -->
         
-            <li class="tools-item page-aside-toggle">
-                <i class="fas fa-outdent"></i>
+            <li class="tools-item flex-center toggle-show-toc">
+                <i class="fas fa-list"></i>
             </li>
         
 
-        <!-- go comment -->
+        <!-- PC go comment -->
         
     </ul>
 </div>
@@ -437,9 +531,10 @@
         </div>
     
 
-    <div class="right-bottom-side-tools">
-        <div class="side-tools-container">
-    <ul class="side-tools-list">
+    <!-- side tools -->
+    <div class="side-tools">
+        <div class="side-tools-container border-box ">
+    <ul class="side-tools-list side-tools-show-handle border-box">
         <li class="tools-item tool-font-adjust-plus flex-center">
             <i class="fas fa-search-plus"></i>
         </li>
@@ -448,17 +543,11 @@
             <i class="fas fa-search-minus"></i>
         </li>
 
-        <li class="tools-item tool-expand-width flex-center">
-            <i class="fas fa-arrows-alt-h"></i>
-        </li>
-
-        <li class="tools-item tool-dark-light-toggle flex-center">
+        <li class="tools-item tool-toggle-theme-mode flex-center">
             <i class="fas fa-moon"></i>
         </li>
 
         <!-- rss -->
-        
-
         
 
         <li class="tools-item tool-scroll-to-bottom flex-center">
@@ -466,91 +555,98 @@
         </li>
     </ul>
 
-    <ul class="exposed-tools-list">
+    <ul class="exposed-tools-list border-box">
+        
+            <li class="tools-item toggle-show-toc-tablet flex-center">
+                <i class="fas fa-list"></i>
+            </li>
+        
+
+        
+
         <li class="tools-item tool-toggle-show flex-center">
             <i class="fas fa-cog fa-spin"></i>
         </li>
-        
-            <li class="tools-item tool-scroll-to-top flex-center">
-                <i class="arrow-up fas fa-arrow-up"></i>
-                <span class="percent"></span>
-            </li>
-        
+
+        <li class="tools-item tool-scroll-to-top flex-center show-arrow">
+            <i class="arrow fas fa-arrow-up"></i>
+            <span class="percent"></span>
+        </li>
     </ul>
 </div>
 
     </div>
 
-    
-        <aside class="page-aside">
-            <div class="post-toc-wrap">
-    <div class="post-toc">
-        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%9A%8F%E6%9C%BA%E6%A3%AE%E6%9E%97%E6%A6%82%E8%BF%B0"><span class="nav-number">1.</span> <span class="nav-text">随机森林概述</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9A%8F%E6%9C%BA%E6%A3%AE%E6%9E%97%E7%9A%84%E6%9E%84%E5%BB%BA%EF%BC%9A"><span class="nav-number">1.1.</span> <span class="nav-text">随机森林的构建：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%84%E6%B5%8B%E7%BB%93%E6%9E%9C%EF%BC%9A"><span class="nav-number">1.2.</span> <span class="nav-text">预测结果：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%88%86%E7%B1%BB%E5%8C%85%E5%90%AB%E4%B8%A4%E4%B8%AA%E7%89%B9%E5%BE%81%E7%9A%84%E6%95%B0%E6%8D%AE%E9%9B%86"><span class="nav-number">2.</span> <span class="nav-text">分类包含两个特征的数据集</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%BC%E5%85%A5%E6%A8%A1%E5%9D%97%E3%80%81%E5%87%BD%E6%95%B0"><span class="nav-number">2.1.</span> <span class="nav-text">导入模块、函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9E%84%E5%BB%BA%E9%9A%8F%E6%9C%BA%E6%A3%AE%E6%9E%97"><span class="nav-number">2.2.</span> <span class="nav-text">构建随机森林</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BE%93%E5%87%BA%E5%8F%AF%E8%A7%86%E5%8C%96%E7%BB%93%E6%9E%9C"><span class="nav-number">2.3.</span> <span class="nav-text">输出可视化结果</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%BB%E5%87%BA%E7%89%B9%E5%BE%81%E7%BB%84%E5%90%88%E7%9A%84%E5%86%B3%E7%AD%96%E8%BE%B9%E7%95%8C"><span class="nav-number">2.4.</span> <span class="nav-text">画出特征组合的决策边界</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%8C%E6%95%B4%E6%BA%90%E4%BB%A3%E7%A0%81"><span class="nav-number">2.5.</span> <span class="nav-text">完整源代码</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%88%86%E7%B1%BB%E5%8C%85%E5%90%AB%E5%9B%9B%E4%B8%AA%E7%89%B9%E5%BE%81%E7%9A%84%E6%95%B0%E6%8D%AE%E9%9B%86%EF%BC%8C%E5%B9%B6%E7%94%BB%E5%87%BA%E6%89%80%E6%9C%89%E7%89%B9%E5%BE%81%E7%BB%84%E5%90%88%E7%9A%84%E5%86%B3%E7%AD%96%E8%BE%B9%E7%95%8C"><span class="nav-number">3.</span> <span class="nav-text">分类包含四个特征的数据集，并画出所有特征组合的决策边界</span></a></li></ol>
-    </div>
-</div>
-        </aside>
-    
-
-    <div class="image-viewer-container">
-    <img src="">
+    <!-- image mask -->
+    <div class="zoom-in-image-mask">
+    <img class="zoom-in-image">
 </div>
 
 
+    <!-- local search -->
     
-        <div class="search-pop-overlay">
-    <div class="popup search-popup">
-        <div class="search-header">
-          <span class="search-input-field-pre">
-            <i class="fas fa-keyboard"></i>
-          </span>
-            <div class="search-input-container">
-                <input autocomplete="off"
-                       autocorrect="off"
-                       autocapitalize="off"
-                       placeholder="Search..."
-                       spellcheck="false"
-                       type="search"
-                       class="search-input"
-                >
-            </div>
-            <span class="popup-btn-close">
-                <i class="fas fa-times"></i>
-            </span>
-        </div>
-        <div id="search-result">
-            <div id="no-result">
-                <i class="fas fa-spinner fa-pulse fa-5x fa-fw"></i>
-            </div>
-        </div>
+
+    <!-- tablet toc -->
+    
+        <div class="tablet-post-toc-mask">
+            <div class="tablet-post-toc">
+                <div class="post-toc-wrap border-box">
+    <div class="post-toc border-box">
+        <ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E9%9A%8F%E6%9C%BA%E6%A3%AE%E6%9E%97%E6%A6%82%E8%BF%B0"><span class="nav-text">随机森林概述</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%9A%8F%E6%9C%BA%E6%A3%AE%E6%9E%97%E7%9A%84%E6%9E%84%E5%BB%BA%EF%BC%9A"><span class="nav-text">随机森林的构建：</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%A2%84%E6%B5%8B%E7%BB%93%E6%9E%9C%EF%BC%9A"><span class="nav-text">预测结果：</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%88%86%E7%B1%BB%E5%8C%85%E5%90%AB%E4%B8%A4%E4%B8%AA%E7%89%B9%E5%BE%81%E7%9A%84%E6%95%B0%E6%8D%AE%E9%9B%86"><span class="nav-text">分类包含两个特征的数据集</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AF%BC%E5%85%A5%E6%A8%A1%E5%9D%97%E3%80%81%E5%87%BD%E6%95%B0"><span class="nav-text">导入模块、函数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9E%84%E5%BB%BA%E9%9A%8F%E6%9C%BA%E6%A3%AE%E6%9E%97"><span class="nav-text">构建随机森林</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BE%93%E5%87%BA%E5%8F%AF%E8%A7%86%E5%8C%96%E7%BB%93%E6%9E%9C"><span class="nav-text">输出可视化结果</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%94%BB%E5%87%BA%E7%89%B9%E5%BE%81%E7%BB%84%E5%90%88%E7%9A%84%E5%86%B3%E7%AD%96%E8%BE%B9%E7%95%8C"><span class="nav-text">画出特征组合的决策边界</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%8C%E6%95%B4%E6%BA%90%E4%BB%A3%E7%A0%81"><span class="nav-text">完整源代码</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%88%86%E7%B1%BB%E5%8C%85%E5%90%AB%E5%9B%9B%E4%B8%AA%E7%89%B9%E5%BE%81%E7%9A%84%E6%95%B0%E6%8D%AE%E9%9B%86%EF%BC%8C%E5%B9%B6%E7%94%BB%E5%87%BA%E6%89%80%E6%9C%89%E7%89%B9%E5%BE%81%E7%BB%84%E5%90%88%E7%9A%84%E5%86%B3%E7%AD%96%E8%BE%B9%E7%95%8C"><span class="nav-text">分类包含四个特征的数据集，并画出所有特征组合的决策边界</span></a></li></ol>
     </div>
 </div>
 
+            </div>
+        </div>
     
-
 </main>
 
 
 
-<script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/utils.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/main.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/header-shrink.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/back2top.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/dark-light-toggle.js"></script>
+<!-- common -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.0.6/js/utils.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.0.6/js/header-shrink.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.0.6/js/back2top.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.0.6/js/toggle-theme.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.0.6/js/code-block.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.0.6/js/main.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.0.6/js/libs/anime.min.js"></script>
+
+<!-- local-search -->
 
 
-    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/local-search.js"></script>
+<!-- lazyload -->
 
 
-
-    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/code-copy.js"></script>
-
-
-
-
-<div class="post-scripts pjax">
+<div class="pjax">
     
-        <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/left-side-toggle.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/libs/anime.min.js"></script><script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/toc.js"></script>
+        <!-- post-helper -->
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.0.6/js/post/post-helper.min.js"></script>
+
+        <!-- toc -->
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.0.6/js/post/toc.min.js"></script>
+        
+
+        <!-- copyright-info -->
+        
+            <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.0.6/js/post/copyright-info.min.js"></script>
+        
+
+        <!-- share -->
+        
+    
+
+    <!-- category-page -->
+    
+
+    <!-- links-page -->
+    
+
+    <!-- photos-page -->
     
 </div>
 
+<!-- mermaid -->
 
-    <script src="//cdn.jsdelivr.net/npm/hexo-theme-keep@3.4.5/source/js/libs/pjax.min.js"></script>
+
+<!-- pjax -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/hexo-theme-keep/4.0.6/js/libs/pjax.min.js"></script>
 <script>
     window.addEventListener('DOMContentLoaded', () => {
         window.pjax = new Pjax({
@@ -566,20 +662,20 @@
             analytics: false,
             currentUrlFullReload: false,
             scrollRestoration: false,
-            // scrollTo: true,
         });
 
         document.addEventListener('pjax:send', () => {
-            KEEP.utils.pjaxProgressBarStart();
+            KEEP.utils.pjaxProgressBarStart()
         });
 
         document.addEventListener('pjax:complete', () => {
-            KEEP.utils.pjaxProgressBarEnd();
-            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'));
-            KEEP.refresh();
+            KEEP.utils.pjaxProgressBarEnd()
+            window.pjax.executeScripts(document.querySelectorAll('script[data-pjax], .pjax script'))
+            KEEP.initExecute()
         });
     });
 </script>
+
 
 
 
