@@ -2,7 +2,7 @@
   --base-font-size: 15.2px;
   --base-line-height: 22px;
   --base-font-weight: 400;
-  --base-font-family: sans-serif, Optima-Regular, Optima, PingFang SC, Microsoft YaHei, sans-serif;
+  --base-font-family: sans-serif, Microsoft YaHei, Optima-Regular, Optima, PingFang SC;
   --page-content-width: 80%;
   --page-content-width-tablet: 88%;
   --page-content-width-mobile: 90%;
@@ -31,7 +31,7 @@
   --post-title-align: left;
   --post-author-avatar: block;
   --post-create-datetime: flex;
-  --post-update-datetime: flex;
+  --post-update-datetime: none;
   --post-img-align: 0 auto 0 0;
 }
 .fade-in-down-animation {
