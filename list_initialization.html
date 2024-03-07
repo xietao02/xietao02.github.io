@@ -203,10 +203,10 @@
                 <span class="datetime">2022-03-07 15:36</span>
             </span>
 
-            <span class="meta-info-item post-update-date">
+            <!-- <span class="meta-info-item post-update-date">
                 <i class="icon fa-solid fa-file-pen"></i>&nbsp;
-                <span class="datetime" data-updated="Thu Mar 07 2024 16:06:48 GMT+0800">2024-03-07 16:06</span>
-            </span>
+                <span class="datetime" data-updated="Thu Mar 07 2024 16:59:22 GMT+0800">2024-03-07 16:59</span>
+            </span> -->
         
 
         
@@ -266,32 +266,32 @@
 
 <p>在C++11及以后的版本中，列表初始化（list initialization）是一种通用的初始化方式，它可以用于多种不同的场合。</p>
 <p>列表初始化可以分为两种类型：直接列表初始化（direct-list-initialization）和复制列表初始化（copy-list-initialization），它们的区别主要体现在是否允许调用显式构造函数上。</p>
-<h1 id="直接列表初始化-Direct-list-initialization"><a href="#直接列表初始化-Direct-list-initialization" class="headerlink" title="直接列表初始化 (Direct-list-initialization)"></a>直接列表初始化 (Direct-list-initialization)</h1><p>直接列表初始化使用花括号<code>&#123;&#125;</code>而不是等号<code>=</code>。它可以用来初始化任何类型的对象，并且在初始化时会考虑对象的显式和非显式构造函数。</p>
+<h1 id="直接列表初始化-Direct-list-initialization"><a href="#直接列表初始化-Direct-list-initialization" class="headerlink" title="直接列表初始化 (Direct-list-initialization)"></a>直接列表初始化 (Direct-list-initialization)</h1><p>直接列表初始化使用花括号 {} 而不是等号 = 。它可以用来初始化任何类型的对象，并且在初始化时会考虑对象的显式和非显式构造函数。</p>
 <p>例如：</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">std::vector&lt;<span class="type">int</span>&gt; v&#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>&#125;;  <span class="comment">// 直接列表初始化</span></span><br></pre></td></tr></table></figure>
 
 <p><strong>注意：这种初始化方式不允许隐式类型转换。</strong></p>
-<h1 id="复制列表初始化-Copy-list-initialization"><a href="#复制列表初始化-Copy-list-initialization" class="headerlink" title="复制列表初始化 (Copy-list-initialization)"></a>复制列表初始化 (Copy-list-initialization)</h1><p>复制列表初始化也使用花括号<code>&#123;&#125;</code>，但是它是通过等号<code>=</code>来进行的。这种初始化方式只会调用非显式（即隐式）构造函数。</p>
+<h1 id="复制列表初始化-Copy-list-initialization"><a href="#复制列表初始化-Copy-list-initialization" class="headerlink" title="复制列表初始化 (Copy-list-initialization)"></a>复制列表初始化 (Copy-list-initialization)</h1><p>复制列表初始化也使用花括号 {} ，但是它是通过等号 = 来进行的。这种初始化方式只会调用非显式（即隐式）构造函数。</p>
 <p>例如：</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">std::vector&lt;<span class="type">int</span>&gt; v = &#123;<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>&#125;;  <span class="comment">// 复制列表初始化</span></span><br></pre></td></tr></table></figure>
 
 <p><strong>注意：如果构造函数是显式的，这种方式将不会编译通过。</strong></p>
-<h1 id="显式和非显式构造函数"><a href="#显式和非显式构造函数" class="headerlink" title="显式和非显式构造函数"></a>显式和非显式构造函数</h1><p>在C++中，构造函数可以被声明为<code>explicit</code>，这意味着不能通过隐式类型转换来调用该构造函数。只有当直接调用构造函数或使用直接列表初始化时，才能使用显式构造函数。</p>
+<h1 id="显式和非显式构造函数"><a href="#显式和非显式构造函数" class="headerlink" title="显式和非显式构造函数"></a>显式和非显式构造函数</h1><p>在C++中，构造函数可以被声明为 explicit ，这意味着不能通过隐式类型转换来调用该构造函数。只有当直接调用构造函数或使用直接列表初始化时，才能使用显式构造函数。</p>
 <ul>
-<li><p><strong>显式构造函数（Explicit constructor）</strong>：通过在构造函数声明前添加<code>explicit</code>关键字来定义。这样的构造函数阻止了编译器自动使用该构造函数进行隐式类型转换。</p>
+<li><p><strong>显式构造函数（Explicit constructor）</strong>：通过在构造函数声明前添加 explicit 关键字来定义。这样的构造函数阻止了编译器自动使用该构造函数进行隐式类型转换。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">A</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="function"><span class="keyword">explicit</span> <span class="title">A</span><span class="params">(<span class="type">int</span> x)</span> </span>&#123;&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function">A <span class="title">a1</span><span class="params">(<span class="number">1</span>)</span></span>;       <span class="comment">// 正确，直接初始化</span></span><br><span class="line">A a2 = <span class="number">1</span>;      <span class="comment">// 错误，不能通过复制初始化隐式调用显式构造函数</span></span><br><span class="line">A a3 = &#123;<span class="number">1</span>&#125;;    <span class="comment">// 错误，不能通过复制列表初始化隐式调用显式构造函数</span></span><br><span class="line">A a4&#123;<span class="number">1</span>&#125;;       <span class="comment">// 正确，直接列表初始化可以调用显式构造函数</span></span><br></pre></td></tr></table></figure></li>
 <li><p><strong>非显式构造函数（Non-explicit constructor）</strong>：默认情况下，构造函数是非显式的，允许隐式类型转换。</p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">class</span> <span class="title class_">B</span> &#123;</span><br><span class="line"><span class="keyword">public</span>:</span><br><span class="line">    <span class="built_in">B</span>(<span class="type">int</span> x) &#123;&#125;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="function">B <span class="title">b1</span><span class="params">(<span class="number">1</span>)</span></span>;     <span class="comment">// 正确，直接初始化</span></span><br><span class="line">B b2 = <span class="number">1</span>;    <span class="comment">// 正确，隐式类型转换</span></span><br><span class="line">B b3 = &#123;<span class="number">1</span>&#125;;  <span class="comment">// 正确，复制列表初始化</span></span><br><span class="line">B b4&#123;<span class="number">1</span>&#125;;     <span class="comment">// 正确，直接列表初始化</span></span><br></pre></td></tr></table></figure></li>
 </ul>
 <h1 id="何时使用列表初始化？"><a href="#何时使用列表初始化？" class="headerlink" title="何时使用列表初始化？"></a>何时使用列表初始化？</h1><h3 id="直接列表初始化-direct-list-initialization"><a href="#直接列表初始化-direct-list-initialization" class="headerlink" title="直接列表初始化 (direct-list-initialization)"></a>直接列表初始化 (direct-list-initialization)</h3><ol>
-<li><strong>命名变量的初始化</strong>：使用花括号初始化一个命名变量，例如 <code>int x&#123;5&#125;;</code>。</li>
+<li><strong>命名变量的初始化</strong>：使用花括号初始化一个命名变量，例如  int x{5}; 。</li>
 <li><strong>未命名临时对象的初始化</strong>：使用花括号初始化一个未命名的临时对象，如在函数调用中直接传递初始化列表。</li>
-<li><strong>具有动态存储持续时间的对象的初始化</strong>：使用<code>new</code>表达式和花括号初始化列表来创建动态分配的对象，例如 <code>auto ptr = new std::vector&lt;int&gt;&#123;1, 2, 3&#125;;</code>。</li>
+<li><strong>具有动态存储持续时间的对象的初始化</strong>：使用 new 表达式和花括号初始化列表来创建动态分配的对象，例如  auto ptr = new std::vector<int>{1, 2, 3}; 。</li>
 <li><strong>非静态数据成员的就地初始化</strong>：在类定义内部使用花括号而不是等号初始化成员变量。</li>
 <li><strong>构造函数的成员初始化列表</strong>：如果使用花括号初始化列表，则在构造函数的成员初始化列表中进行列表初始化。</li>
 </ol>
 <h3 id="复制列表初始化-copy-list-initialization"><a href="#复制列表初始化-copy-list-initialization" class="headerlink" title="复制列表初始化 (copy-list-initialization)"></a>复制列表初始化 (copy-list-initialization)</h3><ol start="6">
-<li><strong>命名变量的初始化</strong>：在等号后使用花括号初始化列表初始化一个命名变量，例如 <code>int x = &#123;5&#125;;</code>。</li>
+<li><strong>命名变量的初始化</strong>：在等号后使用花括号初始化列表初始化一个命名变量，例如  int x = {5}; 。</li>
 <li><strong>函数调用中的参数初始化</strong>：函数调用中使用花括号初始化列表作为参数，对函数参数进行列表初始化。</li>
 <li><strong>return语句中的对象初始化</strong>：在return语句中使用花括号初始化列表返回对象。</li>
 <li>**下标表达式中的用户定义的operator[]**：在用户定义的下标操作符中，使用列表初始化来初始化重载操作符的参数。</li>
@@ -300,7 +300,7 @@
 <li><strong>使用等号的非静态数据成员初始化</strong>：在类定义中使用等号和花括号初始化列表初始化非静态数据成员。</li>
 </ol>
 <p>列表初始化为C++提供了一种统一且灵活的初始化语法，它可以用于多种不同的场景，而不再需要单独区分变量或对象，并且有助于防止窄化转换等潜在问题，提高了代码的健壮性和可读性。</p>
-<p>注意：为了使用C++11的特性，需要在编译命令中添加 <code>-std=c++11</code> 或更高版本的标准</p>
+<p>注意：为了使用C++11的特性，需要在编译命令中添加  -std=c++11  或更高版本的标准</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">g++ -std=c++11 main.cpp -o main</span><br></pre></td></tr></table></figure>
 
                 </div>
