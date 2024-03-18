@@ -48,13 +48,13 @@
 }
 @media (prefers-color-scheme: dark) {
   :root {
-    --toolbar-foreground: #adbac5;
-    --toolbar-background: #313842;
-    --code-foreground: #b5c1cb;
+    --toolbar-foreground: #c2c5ca;
+    --toolbar-background: #3b3b3b;
+    --code-foreground: #c8cbcf;
     --code-background: rgba(204,0,0,0.15);
     --code-border-color: #7a0000;
-    --highlight-background: #1f242a;
-    --highlight-foreground: #afbbc6;
+    --highlight-background: #272727;
+    --highlight-foreground: #c3c6cb;
     --highlight-comment: #969896;
     --highlight-red: #c66;
     --highlight-orange: #de935f;
@@ -63,10 +63,10 @@
     --highlight-aqua: #8abeb7;
     --highlight-blue: #81a2be;
     --highlight-purple: #b294bb;
-    --highlight-gutter-color: #b1bdc8;
-    --highlight-gutter-bg-color: #1f2329;
+    --highlight-gutter-color: #c5c8cd;
+    --highlight-gutter-bg-color: #262626;
     --mac-toolbar-background-color: #1f2021;
-    --shrink-line-foreground: #6c8397;
+    --shrink-line-foreground: #828993;
     --shrink-line-background-1: rgba(38,38,38,0.9);
     --shrink-line-background-2: rgba(52,52,52,0.6);
   }
@@ -95,13 +95,13 @@
   --shrink-line-background-2: rgba(225,225,225,0.6);
 }
 .dark-mode {
-  --toolbar-foreground: #adbac5;
-  --toolbar-background: #313842;
-  --code-foreground: #b5c1cb;
+  --toolbar-foreground: #c2c5ca;
+  --toolbar-background: #3b3b3b;
+  --code-foreground: #c8cbcf;
   --code-background: rgba(204,0,0,0.15);
   --code-border-color: #7a0000;
-  --highlight-background: #1f242a;
-  --highlight-foreground: #afbbc6;
+  --highlight-background: #272727;
+  --highlight-foreground: #c3c6cb;
   --highlight-comment: #969896;
   --highlight-red: #c66;
   --highlight-orange: #de935f;
@@ -110,10 +110,10 @@
   --highlight-aqua: #8abeb7;
   --highlight-blue: #81a2be;
   --highlight-purple: #b294bb;
-  --highlight-gutter-color: #b1bdc8;
-  --highlight-gutter-bg-color: #1f2329;
+  --highlight-gutter-color: #c5c8cd;
+  --highlight-gutter-bg-color: #262626;
   --mac-toolbar-background-color: #1f2021;
-  --shrink-line-foreground: #6c8397;
+  --shrink-line-foreground: #828993;
   --shrink-line-background-1: rgba(38,38,38,0.9);
   --shrink-line-background-2: rgba(52,52,52,0.6);
 }
