@@ -283,11 +283,11 @@
   }
 }
 :root {
-  --primary-color: #c00;
-  --primary-color-light-1: #eb0000;
-  --primary-color-light-2: #ff0a0a;
-  --primary-color-dark-1: #b80000;
-  --primary-color-dark-2: #a30000;
+  --primary-color: #65656d;
+  --primary-color-light-1: #73737d;
+  --primary-color-light-2: #82828c;
+  --primary-color-dark-1: #5b5b62;
+  --primary-color-dark-2: #515157;
   --background-color-1: #fff;
   --background-color-1-transparent: rgba(255,255,255,0.6);
   --background-color-2: #f7f7f7;
@@ -303,14 +303,14 @@
   --badge-color: #f0f0f0;
   --badge-background-color: #9393a1;
   --border-color: #b3b3b3;
-  --selection-color: #eb0000;
+  --selection-color: #73737d;
   --shadow-color: rgba(0,0,0,0.16);
   --shadow-hover-color: rgba(0,0,0,0.22);
   --scrollbar-color: #686877;
   --scrollbar-background-color: #e6e6e6;
   --toc-scrollbar-color: rgba(80,80,92,0.1);
   --copyright-icon-bg-color: rgba(80,80,92,0.12);
-  --avatar-background-color: #b80000;
+  --avatar-background-color: #5b5b62;
   --header-transparent-background-1: rgba(255,255,255,0.28);
   --header-transparent-background-2: rgba(255,255,255,0.4);
   --pjax-progress-bar-color: linear-gradient(45deg, #f10006, #ef5b00, #e59c01, #19ca05, #00cab5, #0264c8, #c303c3);
@@ -333,11 +333,11 @@
 }
 @media (prefers-color-scheme: light) {
   :root {
-    --primary-color: #c00;
-    --primary-color-light-1: #eb0000;
-    --primary-color-light-2: #ff0a0a;
-    --primary-color-dark-1: #b80000;
-    --primary-color-dark-2: #a30000;
+    --primary-color: #65656d;
+    --primary-color-light-1: #73737d;
+    --primary-color-light-2: #82828c;
+    --primary-color-dark-1: #5b5b62;
+    --primary-color-dark-2: #515157;
     --background-color-1: #fff;
     --background-color-1-transparent: rgba(255,255,255,0.6);
     --background-color-2: #f7f7f7;
@@ -353,14 +353,14 @@
     --badge-color: #f0f0f0;
     --badge-background-color: #9393a1;
     --border-color: #b3b3b3;
-    --selection-color: #eb0000;
+    --selection-color: #73737d;
     --shadow-color: rgba(0,0,0,0.16);
     --shadow-hover-color: rgba(0,0,0,0.22);
     --scrollbar-color: #686877;
     --scrollbar-background-color: #e6e6e6;
     --toc-scrollbar-color: rgba(80,80,92,0.1);
     --copyright-icon-bg-color: rgba(80,80,92,0.12);
-    --avatar-background-color: #b80000;
+    --avatar-background-color: #5b5b62;
     --header-transparent-background-1: rgba(255,255,255,0.28);
     --header-transparent-background-2: rgba(255,255,255,0.4);
     --pjax-progress-bar-color: linear-gradient(45deg, #f10006, #ef5b00, #e59c01, #19ca05, #00cab5, #0264c8, #c303c3);
@@ -384,11 +384,11 @@
 }
 @media (prefers-color-scheme: dark) {
   :root {
-    --primary-color: #c00;
-    --primary-color-light-1: #eb0000;
-    --primary-color-light-2: #ff0a0a;
-    --primary-color-dark-1: #b80000;
-    --primary-color-dark-2: #a30000;
+    --primary-color: #65656d;
+    --primary-color-light-1: #73737d;
+    --primary-color-light-2: #82828c;
+    --primary-color-dark-1: #5b5b62;
+    --primary-color-dark-2: #515157;
     --background-color-1: #2a2a2a;
     --background-color-1-transparent: rgba(42,42,42,0.6);
     --background-color-2: #333;
@@ -404,14 +404,14 @@
     --badge-color: #3f3f3f;
     --badge-background-color: #dadcdf;
     --border-color: #6a6a6a;
-    --selection-color: #bc0000;
+    --selection-color: #5c5c64;
     --shadow-color: rgba(120,120,120,0.18);
     --shadow-hover-color: rgba(120,120,120,0.24);
     --scrollbar-color: #5f5f5f;
     --scrollbar-background-color: #242424;
     --toc-scrollbar-color: rgba(194,197,202,0.1);
     --copyright-icon-bg-color: rgba(194,197,202,0.12);
-    --avatar-background-color: #930000;
+    --avatar-background-color: #49494e;
     --header-transparent-background-1: rgba(42,42,42,0.28);
     --header-transparent-background-2: rgba(42,42,42,0.4);
     --pjax-progress-bar-color: linear-gradient(45deg, #ea404a, #ea722f, #e9a71f, #67e559, #18ecec, #1b85f1, #ee1dee);
@@ -434,11 +434,11 @@
   }
 }
 .light-mode {
-  --primary-color: #c00;
-  --primary-color-light-1: #eb0000;
-  --primary-color-light-2: #ff0a0a;
-  --primary-color-dark-1: #b80000;
-  --primary-color-dark-2: #a30000;
+  --primary-color: #65656d;
+  --primary-color-light-1: #73737d;
+  --primary-color-light-2: #82828c;
+  --primary-color-dark-1: #5b5b62;
+  --primary-color-dark-2: #515157;
   --background-color-1: #fff;
   --background-color-1-transparent: rgba(255,255,255,0.6);
   --background-color-2: #f7f7f7;
@@ -454,14 +454,14 @@
   --badge-color: #f0f0f0;
   --badge-background-color: #9393a1;
   --border-color: #b3b3b3;
-  --selection-color: #eb0000;
+  --selection-color: #73737d;
   --shadow-color: rgba(0,0,0,0.16);
   --shadow-hover-color: rgba(0,0,0,0.22);
   --scrollbar-color: #686877;
   --scrollbar-background-color: #e6e6e6;
   --toc-scrollbar-color: rgba(80,80,92,0.1);
   --copyright-icon-bg-color: rgba(80,80,92,0.12);
-  --avatar-background-color: #b80000;
+  --avatar-background-color: #5b5b62;
   --header-transparent-background-1: rgba(255,255,255,0.28);
   --header-transparent-background-2: rgba(255,255,255,0.4);
   --pjax-progress-bar-color: linear-gradient(45deg, #f10006, #ef5b00, #e59c01, #19ca05, #00cab5, #0264c8, #c303c3);
@@ -483,11 +483,11 @@
   --keep-danger-border-color: rgba(244,63,94,0.6);
 }
 .dark-mode {
-  --primary-color: #c00;
-  --primary-color-light-1: #eb0000;
-  --primary-color-light-2: #ff0a0a;
-  --primary-color-dark-1: #b80000;
-  --primary-color-dark-2: #a30000;
+  --primary-color: #65656d;
+  --primary-color-light-1: #73737d;
+  --primary-color-light-2: #82828c;
+  --primary-color-dark-1: #5b5b62;
+  --primary-color-dark-2: #515157;
   --background-color-1: #2a2a2a;
   --background-color-1-transparent: rgba(42,42,42,0.6);
   --background-color-2: #333;
@@ -503,14 +503,14 @@
   --badge-color: #3f3f3f;
   --badge-background-color: #dadcdf;
   --border-color: #6a6a6a;
-  --selection-color: #bc0000;
+  --selection-color: #5c5c64;
   --shadow-color: rgba(120,120,120,0.18);
   --shadow-hover-color: rgba(120,120,120,0.24);
   --scrollbar-color: #5f5f5f;
   --scrollbar-background-color: #242424;
   --toc-scrollbar-color: rgba(194,197,202,0.1);
   --copyright-icon-bg-color: rgba(194,197,202,0.12);
-  --avatar-background-color: #930000;
+  --avatar-background-color: #49494e;
   --header-transparent-background-1: rgba(42,42,42,0.28);
   --header-transparent-background-2: rgba(42,42,42,0.4);
   --pjax-progress-bar-color: linear-gradient(45deg, #ea404a, #ea722f, #e9a71f, #67e559, #18ecec, #1b85f1, #ee1dee);
